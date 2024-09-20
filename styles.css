@@ -10,9 +10,17 @@ h4, h5, h6 {
     color:rgb(45, 240, 224);
 }
 
+.cheatCodeCollection{
+    padding-bottom:3rem;
+}
+
+.cheatBlock{
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+
 .codeBlock {
     background-color: rgb(74, 86, 87);
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 1rem;
-    margin: 1rem;
 }
