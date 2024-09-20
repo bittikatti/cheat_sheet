@@ -11,6 +11,7 @@ h1:before {
 
 h1 {
 	counter-reset: level2Header;
+	counter-increment: level1Header;
 }
 
 h2:before {
