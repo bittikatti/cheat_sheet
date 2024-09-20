@@ -8,6 +8,10 @@ h1:before {
 	counter-reset: subheading;
 }
 
+h1 {
+	counter-increment: subheading;
+}
+
 h2:before {
 	counter-increment: subheading;
 	content: counter(heading)"." counter(subheading)" ";
