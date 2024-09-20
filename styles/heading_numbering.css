@@ -1,4 +1,4 @@
-body:before {
+.mainStyle:before {
 	counter-reset: level1Header level2Header level3Header;
 }
 

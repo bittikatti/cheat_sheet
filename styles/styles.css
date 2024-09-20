@@ -11,6 +11,11 @@ h4, h5, h6 {
     color:rgb(45, 240, 224);
 }
 
+.mainStyle{
+    padding:1rem;
+    padding-bottom:2rem;
+}
+
 .cheatCodeCollection{
     padding-bottom:3rem;
 }

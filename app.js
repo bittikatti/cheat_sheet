@@ -3,7 +3,7 @@ var document;
 // Create web elements for each git data json file
 // Title:
 const titleList = document.createElement("class");
-titleList.className = "cheatCodeCollection";
+titleList.className = "mainStyle";
 titleList.id = `main`;
 document.body.appendChild(titleList);
 const titleElement = document.createElement("h1");
