@@ -1,4 +1,4 @@
-#page {
+body {
 	counter-reset: level1Header;
 	counter-reset: level2Header;
 }
