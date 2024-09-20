@@ -29,4 +29,6 @@ h4, h5, h6 {
     border-radius: 10px;
     padding: 1rem;
     font-family: monospace;
+    margin-left:1rem;
+    margin-right:1rem;
 }
