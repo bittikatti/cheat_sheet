@@ -8,7 +8,7 @@ h4, h5, h6 {
     color:rgb(45, 240, 224);
 }
 
-#codeBlock {
+.codeBlock {
     background-color: lightgreen;
     color: black;
     border-radius: 15px;
@@ -17,7 +17,7 @@ h4, h5, h6 {
     margin: 1rem;
 }
 
-#cheatCodeCollection {
+.cheatCodeCollection {
     background-color: red;
     color: green;
     border-radius: 15px;
