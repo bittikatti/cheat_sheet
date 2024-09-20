@@ -9,13 +9,13 @@ fetch(listPath)
 })
 .then((data) => {
     for (const cheat of data.Cheats) {
-        const cheatBlockElement = document.createElement("code");
+        const cheatBlockElement = document.createElement("div");
         cheatBlockElement.className = "cheatBlock";
 
         const explanationElement = document.createElement("p"); // Would like this to be a explanation element type
         explanationElement.textContent = cheat.Explanation;
 
-        const cheatElement = document.createElement("div"); // Would like this to be a code block element type
+        const cheatElement = document.createElement("code"); // Would like this to be a code block element type
         cheatElement.className = "codeBlock";
         cheatElement.textContent = cheat.Cheat;
 
