@@ -2,7 +2,7 @@ var document;
 
 function populateFromJson(data_json_path){
     // Fetch data from json file
-    const myList = document.querySelector("div");
+    const myList = document.querySelector("[class^=cheatCodeCollection]");
     fetch(data_json_path)
     .then((response) => {
         if (!response.ok) {
