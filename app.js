@@ -18,7 +18,8 @@ fetch(listPath)
         const cheatBlockElement = document.createElement("div");
         cheatBlockElement.className = "cheatBlock";
 
-        const explanationElement = document.createElement("p"); // Would like this to be a explanation element type
+        const explanationElement = document.createElement("div"); // Would like this to be a explanation element type
+        cheatBlockElement.className = "cheatExplanationBlock";
         explanationElement.textContent = cheat.Explanation;
 
         const cheatElement = document.createElement("div"); // Would like this to be a code block element type
