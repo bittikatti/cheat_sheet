@@ -1,15 +1,15 @@
 #page {
-	counter-reset: heading;
-	counter-reset: subheading;
+	counter-reset: level1Header;
+	counter-reset: level2Header;
 }
 h1:before {
-	content: counter(heading)" ";
-	counter-increment: heading;
+	content: counter(level1Header)" ";
+	counter-increment: level1Header;
 }
 h1 {
-	counter-reset: subheading;
+	counter-reset: level2Header;
 }
 h2:before {
-	content: counter(heading)"." counter(subheading)" ";
-	counter-increment: subheading;
+	content: counter(level1Header)"." counter(level2Header)" ";
+	counter-increment: level2Header;
 }
