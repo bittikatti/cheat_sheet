@@ -2,7 +2,7 @@
     "Intro" : "When you regurarly do work on computers that other users use.",
     "Cheats" : [
         {
-            "Explanation" : "Unset user.name and user.email from git globally and locally. Unsets only for the windows user that runs this command and the local repo, where this is run. Does not unset global configs of other windows users.",
+            "Explanation" : "Unset user.name and user.email from git globally and locally. Unsets only for the windows user that runs this command and the local repo, where this is run. Does not unset global configs of other windows users in the machine.",
             "Cheat" : "git config --local --unset user.name && git config --local --unset user.email && git config --global --unset user.name && git config --global --unset user.email"
         },
         {
