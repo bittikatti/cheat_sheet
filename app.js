@@ -1,4 +1,4 @@
-(function populateFromJson(data_json_path){
+function populateFromJson(data_json_path){
     // Fetch data from json file
     const myList = document.querySelector("div");
     fetch(data_json_path)
@@ -46,8 +46,7 @@
         p.appendChild(document.createTextNode(`Error: ${error.message}`));
         document.body.insertBefore(p, myList);
     });
-})
-
+}
 
 // Create web elements for each git data json file
 const git_data_jsons = ["git_not_in_your_mahcine"];
