@@ -1,7 +1,5 @@
-script:before {
-	counter-reset: level1Header;
-	counter-reset: level2Header;
-	counter-reset: level3Header;
+body:before {
+	counter-reset: level1Header level2Header level3Header;
 }
 
 h1:before {
