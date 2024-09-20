@@ -3,6 +3,7 @@ body {
 	counter-reset: level2Header;
 	counter-reset: level3Header;
 }
+
 h1:before {
 	counter-increment: level1Header;
 	content: counter(level1Header)" ";
@@ -11,13 +12,16 @@ h1:before {
 h1 {
 	counter-reset: level2Header;
 }
+
 h2:before {
-	content: counter(level1Header)"." counter(level2Header)" ";
 	counter-increment: level2Header;
+	content: counter(level1Header)"." counter(level2Header)" ";
 }
+
 h2 {
 	counter-reset: level3Header;
 }
+
 h3:before {
 	counter-increment:level3Header;
 	content:counter(level1Header) "." counter(level2Header) "." counter(level3Header)" ";
