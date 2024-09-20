@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: rgb(6, 100, 112);
+    background-color: rgb(3, 56, 63);
     padding: 1rem;
     font-family: Arial;
     color: rgb(222, 248, 252);
@@ -12,5 +12,9 @@ body {
 h1, h2, h3,
 h4, h5, h6 {
     color: rgb(157, 226, 243);
+    padding: 2rem;
 }
 
+#cheat_code_container {
+    background-color: rgb(7, 93, 104);
+}

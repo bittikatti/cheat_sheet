@@ -1,11 +1,45 @@
 <html>
     <head>
         <!-- Invisible meta data about the page -->
-        <title>Test</title>
+        <title>My Cheat Sheet</title>
         <link rel='stylesheet' href='styles.css'>
     </head>
     <body>
-        <h1>Test</h1>
-        <div>So test</div>
+        <h1>My Cheat Sheet</h1>
+        <h2>Git</h2>
+        <div class="cheat_code_container"></div>
+        <script>
+            const myList = document.querySelector("div");
+            var listPath = "data/git/git_not_in_your_mahcine.json"
+            fetch(listPath)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Unable to fetch ${listPath}. Status = ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                for (const cheat of data.Cheats) {
+                    const listItem = document.createElement("div");
+
+                    const explanationElement = document.createElement("p"); // Would like this to be a explanation element type
+                    explanationElement.textContent = cheat.Explanation;
+
+                    const cheatElement = document.createElement("code"); // Would like this to be a code block element type
+                    cheatElement.textContent = cheat.Cheat;
+
+                    listItem.append(
+                        explanationElement,
+                        cheatElement
+                );
+                myList.appendChild(listItem);
+                }
+            })
+            .catch((error) => {
+                const p = document.createElement("p");
+                p.appendChild(document.createTextNode(`Error: ${error.message}`));
+                document.body.insertBefore(p, myList);
+            });
+        </script>
     </body>
 </html>
