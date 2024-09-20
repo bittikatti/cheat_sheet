@@ -60,7 +60,7 @@ function populateFromJson(data_json_path){
     .catch((error) => {
         const p = document.createElement("p");
         p.appendChild(document.createTextNode(`Error: ${error.message}`));
-        document.body.insertBefore(p, myList);
+        document.body.insertAfter(p, myList);
     });
 }
 
