@@ -51,7 +51,7 @@ function populateFromJson(data_json_path){
 }
 
 // Create web elements for each git data json file
-const git_data_jsons = ["git_not_in_your_mahcine"];
+const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
 for (var path of git_data_jsons) {
     populateFromJson(`data/git/${path}.json`)
 }
