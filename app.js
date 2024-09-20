@@ -51,6 +51,14 @@ function populateFromJson(data_json_path){
 }
 
 // Create web elements for each git data json file
+// Title:
+const titleList = document.querySelector("[class^=cheatCodeCollection]");
+const titleElement = document.createElement("h1");
+titleElement.textContent = "Git"
+titleList.appendChild(titleElement);
+const useless_p = document.createElement("p");
+document.body.insertBefore(useless_p, titleList);
+
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
 for (var path of git_data_jsons) {
     populateFromJson(`data/git/${path}.json`)
