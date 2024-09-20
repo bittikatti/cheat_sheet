@@ -10,13 +10,18 @@ const useless_p = document.createElement("p");
 document.body.insertBefore(useless_p, titleList);
 
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
+var index = 0;
 for (var path of git_data_jsons) {
-    populateFromJson(`data/git/${path}.json`)
+    populateFromJson(`data/git/${path}.json`, index)
+    index = index + 1;
 }
 
-function populateFromJson(data_json_path){
+function populateFromJson(data_json_path, index){
     // Fetch data from json file
-    const myList = document.querySelector("[class^=cheatCodeCollection]");
+    const myList = document.createElement("class");
+    myList.className = "cheatCodeCollection";
+    myList.id = `cheatCodeCollection${index}`;
+    document.body.appendChild(myList);
     fetch(data_json_path)
     .then((response) => {
         if (!response.ok) {
