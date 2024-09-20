@@ -1,26 +1,26 @@
-.mainStyle:before {
+body {
 	counter-reset: level1Header level2Header level3Header;
 }
 
-h1:before {
-	counter-increment: level1Header;
-	content: counter(level1Header)" ";
-}
-
 h1 {
-	counter-reset: level2Header;
+	counter-increment: level1Header;
+	counter-set: level2Header 0;
 }
-
-h2:before {
-	counter-increment: level2Header;
-	content: counter(level1Header)"."counter(level2Header)" ";
+h1::before {
+	content: counter(level1Header) ' ';
 }
 
 h2 {
-	counter-reset: level3Header;
+	counter-increment: level2Header;
+	counter-set: level3Header 0
+}
+h2::before {
+	content: counter(level1Header) '.' counter(level2Header) ' ';
 }
 
-h3:before {
-	counter-increment:level3Header;
-	content:counter(level1Header)"."counter(level2Header)"."counter(level3Header)" ";
+h3 {
+	counter-increment: level3Header;
+}
+h3::before {
+	content: counter(level1Header) '.' counter(level2Header) '.' counter(level3Header) ' ';
 }
