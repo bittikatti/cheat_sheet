@@ -1,3 +1,5 @@
+var document;
+
 function populateFromJson(data_json_path){
     // Fetch data from json file
     const myList = document.querySelector("div");
