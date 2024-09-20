@@ -33,3 +33,4 @@
         document.body.insertBefore(p, myList);
     });
 })
+populateFromJson()
