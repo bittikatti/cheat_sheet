@@ -2,7 +2,7 @@ body {
     font-size: 16px;
     font-family: Arial;
     text-indent:0px;
-    
+    background-color: rgb(3, 87, 83);
 }
 
 body,
@@ -30,6 +30,5 @@ h4, h5, h6 {
 #codeBlock {
     background-color: rgb(33, 34, 34);
     padding:2.25rem;
-    color:red;
-    text-wrap:wrap;
+    font-family: monospace;
 }
