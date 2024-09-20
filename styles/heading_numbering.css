@@ -1,4 +1,4 @@
-head:before {
+script:before {
 	counter-reset: level1Header;
 	counter-reset: level2Header;
 	counter-reset: level3Header;
@@ -15,7 +15,7 @@ h1 {
 
 h2:before {
 	counter-increment: level2Header;
-	content: counter(level1Header)"." counter(level2Header)" ";
+	content: counter(level1Header)"."counter(level2Header)" ";
 }
 
 h2 {
@@ -24,5 +24,5 @@ h2 {
 
 h3:before {
 	counter-increment:level3Header;
-	content:counter(level1Header) "." counter(level2Header) "." counter(level3Header)" ";
+	content:counter(level1Header)"."counter(level2Header)"."counter(level3Header)" ";
 }
