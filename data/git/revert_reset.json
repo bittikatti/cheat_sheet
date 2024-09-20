@@ -1,0 +1,26 @@
+{
+    "Subtitle": "'Undo' bad commits and other accidents",
+    "Intro" : "Addicents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
+    "Cheats" : [
+        {
+            "Explanation" : "Unpushed regular commit, but keep changes",
+            "Cheat" : "git reset --soft HEAD~1"
+        },
+        {
+            "Explanation" : "(Avoid using this) Unpushed regular commit. Trash the changes.",
+            "Cheat" : "git reset --hard HEAD~1"
+        },
+        {
+            "Explanation" : "Pushed regular commit",
+            "Cheat" : "git revert -- <commit id you want to flip>"
+        },
+        {
+            "Explanation" : "Unpushed merge commit. Git reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
+            "Cheat" : "Depends. Not sure."
+        },
+        {
+            "Explanation" : "Pushed merge commit. Revert is not ctrl+Z, it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned.<br>If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
+            "Cheat" : "git revert -m 1/2 <commit you want to get to in the parent branch>"
+        }
+    ]
+}
