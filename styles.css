@@ -2,8 +2,14 @@ body {
     padding: 1rem;
 }
 
+h1 {
+    background-color: lightgreen;
+    color:blue;
+}
+
 #codeBlock {
     background-color: lightgreen;
+    color: black;
     border-radius: 15px;
     text-align: center;
     padding: 1rem;
@@ -12,5 +18,6 @@ body {
 
 #cheatCodeCollection {
     background-color: red;
+    color: green;
     border-radius: 15px;
 }
