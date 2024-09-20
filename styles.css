@@ -3,6 +3,7 @@ body {
     background-color: rgb(10, 109, 112);
     color:rgb(140, 243, 234);
     font-family: Arial;
+    font-size: 16px;
 }
 
 p, span {
