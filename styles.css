@@ -1,6 +1,8 @@
 body {
     padding: 1rem;
     background-color: rgb(10, 109, 112);
+    color:rgb(140, 243, 234);
+    font-family: Arial;
 }
 
 h1, h2, h3,
@@ -9,16 +11,8 @@ h4, h5, h6 {
 }
 
 .codeBlock {
-    background-color: lightgreen;
-    color: black;
+    background-color: rgb(74, 86, 87);
     border-radius: 15px;
-    text-align: center;
     padding: 1rem;
     margin: 1rem;
-}
-
-.cheatCodeCollection {
-    background-color: red;
-    color: green;
-    border-radius: 15px;
 }
