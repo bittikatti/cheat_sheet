@@ -1,13 +1,13 @@
 #page {
 	counter-reset: heading;
 }
+
 h1:before {
 	content: counter(heading)" ";
 	counter-increment: heading;
-}
-h1 {
 	counter-reset: subheading;
 }
+
 h2:before {
 	counter-increment: subheading;
 	content: counter(heading)"." counter(subheading)" ";
