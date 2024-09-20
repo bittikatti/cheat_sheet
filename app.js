@@ -10,6 +10,8 @@ const titleElement = document.createElement("h1");
 titleElement.textContent = "Git"
 titleList.appendChild(titleElement);
 
+
+// Create contents from jsons
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
 var index = 0;
 for (var path of git_data_jsons) {
@@ -19,9 +21,16 @@ for (var path of git_data_jsons) {
 
 function populateFromJson(data_json_path, index){
     // Fetch data from json file
-    const myList = document.querySelector("[id^=main]");
+
+    const myList = document.createElement("class");
     myList.className = "cheatCodeCollection";
     myList.id = `cheatCodeCollection${index}`;
+
+    // Find element with main id and add new class `cheatCodeCollection${index}` to it.
+    const mainElement = document.querySelector("[id^=main]");
+    mainElement.appendChild(myList);
+
+    // Populate the `cheatCodeCollection${index}` with json data
     fetch(data_json_path)
     .then((response) => {
         if (!response.ok) {
