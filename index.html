@@ -2,12 +2,6 @@
     <head>
         <!-- Invisible meta data about the page -->
         <title>My Cheat Sheet</title>
-        <link rel='stylesheet' href='styles.css'>
-    </head>
-    <body>
-        <h1>My Cheat Sheet</h1>
-        <h2>Git</h2>
-        <div class="cheatCodeCollection"></div>
         <script>
             const myList = document.querySelector("div");
             var listPath = "data/git/git_not_in_your_mahcine.json"
@@ -43,5 +37,11 @@
                 document.body.insertBefore(p, myList);
             });
         </script>
+        <link rel='stylesheet' href='styles.css'>
+    </head>
+    <body>
+        <h1>My Cheat Sheet</h1>
+        <h2>Git</h2>
+        <div class="cheatCodeCollection"></div>
     </body>
 </html>
