@@ -2,15 +2,16 @@ var document;
 
 // Create web elements for each git data json file
 // Title:
-const titleList = document.querySelector("[class^=cheatCodeCollection]");
+const titleList = document.createElement("class");
+titleList.className = "cheatCodeCollection";
+titleList.id = `cheatCodeCollection${0}`;
+document.body.appendChild(titleList);
 const titleElement = document.createElement("h1");
 titleElement.textContent = "Git"
 titleList.appendChild(titleElement);
-const useless_p = document.createElement("p");
-document.body.insertBefore(useless_p, titleList);
 
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
-var index = 0;
+var index = 1;
 for (var path of git_data_jsons) {
     populateFromJson(`data/git/${path}.json`, index)
     index = index + 1;
