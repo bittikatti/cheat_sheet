@@ -1,4 +1,4 @@
-head:before {
+body:before {
 	counter-reset: level1Header level2Header level3Header;
 }
 
