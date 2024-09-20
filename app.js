@@ -4,14 +4,14 @@ var document;
 // Title:
 const titleList = document.createElement("class");
 titleList.className = "cheatCodeCollection";
-titleList.id = `cheatCodeCollection${0}`;
+titleList.id = `main`;
 document.body.appendChild(titleList);
 const titleElement = document.createElement("h1");
 titleElement.textContent = "Git"
 titleList.appendChild(titleElement);
 
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
-var index = 1;
+var index = 0;
 for (var path of git_data_jsons) {
     populateFromJson(`data/git/${path}.json`, index)
     index = index + 1;
@@ -19,10 +19,9 @@ for (var path of git_data_jsons) {
 
 function populateFromJson(data_json_path, index){
     // Fetch data from json file
-    const myList = document.createElement("class");
+    const myList = document.querySelector("[id^=main]");
     myList.className = "cheatCodeCollection";
     myList.id = `cheatCodeCollection${index}`;
-    document.body.appendChild(myList);
     fetch(data_json_path)
     .then((response) => {
         if (!response.ok) {
@@ -66,7 +65,7 @@ function populateFromJson(data_json_path, index){
     .catch((error) => {
         const p = document.createElement("p");
         p.appendChild(document.createTextNode(`Error: ${error.message}`));
-        document.body.insertAfter(p, myList);
+        document.body.insertBefore(p, myList);
     });
 }
 
