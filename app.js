@@ -14,7 +14,7 @@ function populateFromJson(data_json_path){
     // Feed the data to html
     .then((data) => {
         // Add Subtitle
-        const subtitleElement = document.createElement("h3");
+        const subtitleElement = document.createElement("h2");
         subtitleElement.textContent = data.Subtitle
         myList.appendChild(subtitleElement);
 
