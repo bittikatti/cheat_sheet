@@ -20,19 +20,21 @@
             })
             .then((data) => {
                 for (const cheat of data.Cheats) {
-                    const listItem = document.createElement("div");
+                    const cheatBlockElement = document.createElement("div");
+                    cheatBlockElement.className = "cheatBlock";
 
                     const explanationElement = document.createElement("p"); // Would like this to be a explanation element type
                     explanationElement.textContent = cheat.Explanation;
 
-                    const cheatElement = document.createElement("code"); // Would like this to be a code block element type
+                    const cheatElement = document.createElement("pre"); // Would like this to be a code block element type
+                    cheatElement.className = "codeBlock";
                     cheatElement.textContent = cheat.Cheat;
 
-                    listItem.append(
+                    cheatBlockElement.append(
                         explanationElement,
                         cheatElement
                 );
-                myList.appendChild(listItem);
+                myList.appendChild(cheatBlockElement);
                 }
             })
             .catch((error) => {

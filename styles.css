@@ -1,10 +1,11 @@
 html {
     font-size: 16px;
+    text-indent:0px;
 }
 
 body {
     background-color: rgb(3, 56, 63);
-    padding: 1rem;
+    padding: 3rem;
     font-family: Arial;
     color: rgb(222, 248, 252);
 }
@@ -17,4 +18,14 @@ h4, h5, h6 {
 
 #cheat_code_container {
     background-color: rgb(7, 93, 104);
+}
+
+#cheatBlock {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+#codeBlock {
+    background-color: rgb(53, 54, 54);
+    padding:1rem;
 }
