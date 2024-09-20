@@ -1,11 +1,11 @@
-html, body {
+body {
     font-size: 16px;
     font-family: Arial;
     text-indent:0px;
-    background-color: rgb(3, 56, 63);
+    
 }
 
-html, body,
+body,
 h1, h2, h3, h4, h5, h6,
 #cheatCodeCollection, #cheatBlock, #codeBlock {
     padding:1rem;
@@ -31,4 +31,5 @@ h4, h5, h6 {
     background-color: rgb(33, 34, 34);
     padding:2.25rem;
     color:red;
+    text-wrap:wrap;
 }
