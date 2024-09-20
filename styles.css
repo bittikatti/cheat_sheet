@@ -1,11 +1,11 @@
 body {
     padding: 1rem;
-    background-color: yellow;
+    background-color: rgb(10, 109, 112);
 }
 
-h1 {
-    background-color: lightgreen;
-    color:blue;
+h1, h2, h3,
+h4, h5, h6 {
+    color:rgb(45, 240, 224);
 }
 
 #codeBlock {
