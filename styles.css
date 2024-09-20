@@ -13,6 +13,7 @@ h4, h5, h6 {
 }
 
 #cheatCodeCollection {
+    padding:1rem;
     padding-bottom: 3rem;
 }
 
@@ -23,6 +24,6 @@ h4, h5, h6 {
 
 #codeBlock {
     background-color: rgb(33, 34, 34);
-    padding:2.25rem;
+    padding:2rem;
     font-family: monospace;
 }
