@@ -8,10 +8,15 @@ fetch(listPath)
     return response.json();
 })
 .then((data) => {
-    // Subtitle and intro
+    // Add Subtitle
     const subtitleElement = document.createElement("h3");
     subtitleElement.textContent = data.Subtitle
     myList.appendChild(subtitleElement);
+
+    // Intro under the subtitle
+    const introElement = document.createElement("p");
+    introElement.textContent = data.Intro
+    myList.appendChild(introElement);
 
     // Contents
     for (const cheat of data.Cheats) {
