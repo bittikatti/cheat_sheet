@@ -1,5 +1,4 @@
 body {
-    background-color: snow;
     padding: 1rem;
 }
 
@@ -13,4 +12,5 @@ body {
 
 #cheatCodeCollection {
     background-color: red;
+    border-radius: 15px;
 }
