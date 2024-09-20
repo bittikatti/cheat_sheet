@@ -9,7 +9,7 @@ fetch(listPath)
 })
 .then((data) => {
     for (const cheat of data.Cheats) {
-        const cheatBlockElement = document.createElement("div");
+        const cheatBlockElement = document.createElement("code");
         cheatBlockElement.className = "cheatBlock";
 
         const explanationElement = document.createElement("p"); // Would like this to be a explanation element type
