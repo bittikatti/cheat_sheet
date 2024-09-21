@@ -7,6 +7,7 @@ titleList.className = "mainStyle";
 titleList.id = `main`;
 document.body.appendChild(titleList);
 const titleElement = document.createElement("h1");
+titleElement.className = "cheatBlock"
 titleElement.textContent = "Git"
 titleList.appendChild(titleElement);
 
