@@ -12,7 +12,7 @@ titleList.appendChild(titleElement);
 
 
 // Create contents from jsons
-const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset"];
+const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset", "log_commands"];
 var index = 0;
 for (var path of git_data_jsons) {
     populateFromJson(`data/git/${path}.json`, index)
