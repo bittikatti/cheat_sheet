@@ -43,11 +43,13 @@ function populateFromJson(data_json_path, index){
     .then((data) => {
         // Add Subtitle
         const subtitleElement = document.createElement("h2");
+        subtitleElement.className = "cheatBlock"
         subtitleElement.textContent = data.Subtitle
         myList.appendChild(subtitleElement);
 
         // Intro under the subtitle
-        const introElement = document.createElement("p");
+        const introElement = document.createElement("div");
+        introElement.className = "cheatBlock"
         introElement.textContent = data.Intro
         myList.appendChild(introElement);
 
