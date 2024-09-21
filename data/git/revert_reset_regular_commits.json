@@ -1,5 +1,5 @@
 {
-    "Subtitle": "'Undo' bad commits and other accidents",
+    "Subtitle": "'Undo' bad commits",
     "Intro" : "Addicents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
     "Cheats" : [
         {
