@@ -19,7 +19,7 @@
             "Cheat" : "Depends. Not sure."
         },
         {
-            "Explanation" : "Pushed merge commit. Revert is not ctrl+Z, it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned.<br>If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
+            "Explanation" : "Pushed merge commit. Revert is not ctrl+Z, it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
             "Cheat" : "git revert -m 1/2 <commit you want to get to in the parent branch>"
         }
     ]

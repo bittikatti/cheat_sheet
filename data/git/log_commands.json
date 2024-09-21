@@ -7,7 +7,7 @@
             "Cheat" : "git log -S"
         },
         {
-            "Explanation" : "Nice graph of branches",
+            "Explanation" : "Nice graph of commits (shows branching). Github's Insights > Networking has better UI.",
             "Cheat" : "git log --all --decorate --oneline --graph"
         }
     ]
