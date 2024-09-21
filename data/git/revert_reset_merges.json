@@ -1,19 +1,7 @@
 {
-    "Subtitle": "'Undo' bad commits and other accidents",
-    "Intro" : "Addicents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
+    "Subtitle": "Merge commit went sideways",
+    "Intro" : "Take a deep breath and eat, if it has been too long already; this is most likely is going to take a lot of energy to fix correctly. You may also need help with this and/or may need to notify someone (to later revert the reverted merge commit if necessary).",
     "Cheats" : [
-        {
-            "Explanation" : "Unpushed regular commit, but keep changes",
-            "Cheat" : "git reset --soft HEAD~1"
-        },
-        {
-            "Explanation" : "(Avoid using this) Unpushed regular commit. Trash the changes.",
-            "Cheat" : "git reset --hard HEAD~1"
-        },
-        {
-            "Explanation" : "Pushed regular commit",
-            "Cheat" : "git revert -- <commit id you want to flip>"
-        },
         {
             "Explanation" : "Unpushed merge commit. Git reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
             "Cheat" : "Depends. Not sure."

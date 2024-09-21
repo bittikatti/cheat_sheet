@@ -1,0 +1,18 @@
+{
+    "Subtitle": "'Undo' bad commits and other accidents",
+    "Intro" : "Addicents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
+    "Cheats" : [
+        {
+            "Explanation" : "Unpushed regular commit, but keep changes",
+            "Cheat" : "git reset --soft HEAD~1"
+        },
+        {
+            "Explanation" : "(Avoid using this) Unpushed regular commit. Trash the changes.",
+            "Cheat" : "git reset --hard HEAD~1"
+        },
+        {
+            "Explanation" : "Pushed regular commit",
+            "Cheat" : "git revert -- <commit id you want to flip>"
+        }
+    ]
+}
