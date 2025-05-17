@@ -31,7 +31,6 @@ function readJSON(dataJson, topLevelContentIndex){
         return response.json();
     })
 
-
     .then((data) => {
         // Create one top level title for this json
         const subtitleElement = document.createElement("h1");
@@ -55,7 +54,6 @@ function readJSON(dataJson, topLevelContentIndex){
 }
 
 function populateFromContentDict(newList, content, subLevelContentIndex){
-    // Fetch data from json file
 
     const subList = document.createElement("class");
     subList.className = "cheatCodeCollection";
