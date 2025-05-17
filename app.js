@@ -10,11 +10,9 @@ document.body.appendChild(mainContent);
 //Create content from one json
 var topLevelContentIndex = 0;
 var subLevelContentIndex = 0;
-const dataJsons = ["git", "dotnet"]
 
-for (var dataJson of dataJsons){
-    readJSON(`data/${dataJson}.json`);
-}
+jsonFile = document.currentScript.getAttribute("file");
+readJSON(`data/${jsonFile}.json`);
 
 
 function readJSON(dataJson, topLevelContentIndex){
