@@ -13,6 +13,24 @@ titleList.appendChild(titleElement);
 
 document.body.appendChild(titleList);
 
+//Create content from one json
+var gitJson = `data/git.json`;
+readJSON(gitJson);
+
+function readJSON(dataJson){
+    fetch(dataJson)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`Unable to fetch ${dataJson}. Status = ${response.status}`);
+        }
+        return response.json();
+    })
+    .catch((error) => {
+        const p = document.createElement("p");
+        p.appendChild(document.createTextNode(`Error: ${error.message}`));
+        document.body.insertBefore(p, titleList);
+    });
+}
 
 // Create contents from jsons
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset_regular_commits", "revert_reset_merges","log_commands", "branches"];
