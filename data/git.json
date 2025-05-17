@@ -87,6 +87,16 @@
                     "Cheat" : "git branch -rd origin/<branch name>"
                 }
             ]
+        },
+        {
+            "Subtitle" : "Merge",
+            "Intro" : "Merge branches",
+            "Cheats" : [
+                {
+                    "Explanation" : "You want to merge two branches, both of which includes changes made after split. However, you do not want the end result to have any active changes from one of the branches while both should be visible in commit history. Kind of like moving one branch to trash bin but never fully deleting it. Use 'ours' or 'theirs' to indicate the branch which you want to 'keep active'.",
+                    "Cheat" : "git merge -X theirs/ours"
+                }
+            ]
         }
     ]
 }
