@@ -60,12 +60,12 @@ function readJSON(dataJson, topLevelContentIndex){
 function testAddingOneBlock(contents, newList){
     // Add a cheat block with content size as
     const subtitleElement = document.createElement("h2");
-    subtitleElement.className = "cheatBlock"
-    subtitleElement.textContent = "Aliotsikko"
+    subtitleElement.className = "cheatBlock";
+    subtitleElement.textContent = "Aliotsikko";
     newList.appendChild(subtitleElement);
 
     const introElement = document.createElement("div");
-    introElement.className = "cheatBlock"
+    introElement.className = "cheatBlock";
     introElement.textContent = `contents length ${contents.length}`;
     newList.appendChild(introElement);
 }
@@ -79,14 +79,14 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
 
     // Add Subtitle
     const subtitleElement = document.createElement("h2");
-    subtitleElement.className = "cheatBlock"
-    subtitleElement.textContent = content.Subtitle
+    subtitleElement.className = "cheatBlock";
+    subtitleElement.textContent = content.Subtitle;
     subList.appendChild(subtitleElement);
 
     // Intro under the subtitle
     const introElement = document.createElement("div");
-    introElement.className = "cheatBlock"
-    introElement.textContent = content.Intro
+    introElement.className = "cheatBlock";
+    introElement.textContent = content.Intro;
     subList.appendChild(introElement);
 
     // Contents
@@ -144,14 +144,14 @@ function populateFromJson(data_json_path, index){
     .then((data) => {
         // Add Subtitle
         const subtitleElement = document.createElement("h2");
-        subtitleElement.className = "cheatBlock"
-        subtitleElement.textContent = data.Subtitle
+        subtitleElement.className = "cheatBlock";
+        subtitleElement.textContent = data.Subtitle;
         myList.appendChild(subtitleElement);
 
         // Intro under the subtitle
         const introElement = document.createElement("div");
-        introElement.className = "cheatBlock"
-        introElement.textContent = data.Intro
+        introElement.className = "cheatBlock";
+        introElement.textContent = data.Intro;
         myList.appendChild(introElement);
 
         // Contents
