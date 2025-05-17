@@ -10,7 +10,7 @@ a{
   color:rgb(45, 240, 224);
 }
 
-a{
+a:active, a:hover{
   color:rgb(240 243 243);
 }
 
