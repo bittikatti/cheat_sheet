@@ -14,17 +14,26 @@ titleList.appendChild(titleElement);
 document.body.appendChild(titleList);
 
 //Create content from one json
-var gitJson = `data/git.json`;
-readJSON(gitJson);
+const dataJsons = ["git"];
+for (var dataJson in dataJsons){
+    var contentIndex = 0;
+    dataJsonPath = `data/${dataJson}.json`;
+
+    readJSON(dataJsonPath);
+    // To create new content block
+    contentIndex = contentIndex + 1;
+}
+
+
 
 function readJSON(dataJson){
-    const myList = document.createElement("class");
-    myList.className = "cheatCodeCollection";
-    myList.id = `testId`;
+    const newList = document.createElement("class");
+    newList.className = "cheatCodeCollection";
+    newList.id = `testId`;
 
     // Find element with main id and add new class `cheatCodeCollection${index}` to it.
     const mainElement = document.querySelector("[id^=main]");
-    mainElement.appendChild(myList);
+    mainElement.appendChild(newList);
 
     fetch(dataJson)
     .then((response) => {
@@ -33,11 +42,15 @@ function readJSON(dataJson){
         }
         return response.json();
     })
+
+
     .then((data) => {
-        const subtitleElement = document.createElement("h2");
-        subtitleElement.className = "cheatBlock"
-        subtitleElement.textContent = `This is from combined git.json ${data.Heading1}`
-        myList.appendChild(subtitleElement);
+        const subtitleElement = document.createElement("h1");
+        subtitleElement.className = "cheatBlock";
+        subtitleElement.textContent = data.Heading1;
+        newList.appendChild(subtitleElement);
+
+        
     })
     .catch((error) => {
         const p = document.createElement("p");
