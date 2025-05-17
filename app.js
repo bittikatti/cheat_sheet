@@ -9,11 +9,13 @@ document.body.appendChild(mainContent);
 
 //Create content from one json
 var topLevelContentIndex = 0;
+var subLevelContentIndex = 0;
 var dataJson = "git";
 dataJsonPath = `data/${dataJson}.json`;
 readJSON(dataJsonPath);
 
 function readJSON(dataJson, topLevelContentIndex){
+    // Create container for one json data
     const newList = document.createElement("class");
     newList.className = "cheatCodeCollection";
     newList.id = `topLevelCheatCodeCollection${topLevelContentIndex}`;
@@ -31,12 +33,20 @@ function readJSON(dataJson, topLevelContentIndex){
 
 
     .then((data) => {
+        // Create one top level title for this json
         const subtitleElement = document.createElement("h1");
         subtitleElement.className = "cheatBlock";
         subtitleElement.textContent = data.Heading1;
         newList.appendChild(subtitleElement);
 
         testAddingOneBlock(data.Contents, newList)
+        
+        for (var content of data.Contents){
+            //Create sub content on subtitle level
+            populateFromContentDict(newList, content, subLevelContentIndex);
+            
+            subLevelContentIndex = subLevelContentIndex + 1;
+        }
         
     })
     .catch((error) => {
@@ -52,11 +62,53 @@ function testAddingOneBlock(contents, newList){
     subtitleElement.className = "cheatBlock"
     subtitleElement.textContent = "Aliotsikko"
     newList.appendChild(subtitleElement);
-    
+
     const introElement = document.createElement("div");
     introElement.className = "cheatBlock"
     introElement.textContent = `contents length ${contents.length}`;
     newList.appendChild(introElement);
+}
+
+function populateFromContentDict(newList, content, subLevelContentIndex){
+    // Fetch data from json file
+
+    const subList = document.createElement("class");
+    subList.className = "cheatCodeCollection";
+    subList.id = `cheatCodeCollection${subLevelContentIndex}`;
+
+    // Add Subtitle
+    const subtitleElement = document.createElement("h2");
+    subtitleElement.className = "cheatBlock"
+    subtitleElement.textContent = content.Subtitle
+    subList.appendChild(subtitleElement);
+
+    // Intro under the subtitle
+    const introElement = document.createElement("div");
+    introElement.className = "cheatBlock"
+    introElement.textContent = content.Intro
+    subList.appendChild(introElement);
+
+    // Contents
+    for (const cheat of content.Cheats) {
+        const cheatBlockElement = document.createElement("div");
+        cheatBlockElement.className = "cheatBlock";
+
+        const explanationElement = document.createElement("div"); // Would like this to be a explanation element type
+        explanationElement.className = "cheatExplanationBlock";
+        explanationElement.textContent = cheat.Explanation;
+
+        const cheatElement = document.createElement("div"); // Would like this to be a code block element type
+        cheatElement.className = "codeBlock";
+        cheatElement.textContent = cheat.Cheat;
+
+        cheatBlockElement.append(
+            explanationElement,
+            cheatElement
+    );
+    subList.appendChild(cheatBlockElement);
+
+    newList.appendChild(subList);
+    }
 }
 
 // Create contents from jsons
