@@ -1,15 +1,9 @@
 var document;
 
 // Create web elements for each git data json file
-// Title:
 const titleList = document.createElement("class");
 titleList.className = "mainStyle";
 titleList.id = `main`;
-
-const titleElement = document.createElement("h1");
-titleElement.className = "cheatBlock"
-titleElement.textContent = "Git"
-titleList.appendChild(titleElement);
 
 document.body.appendChild(titleList);
 
