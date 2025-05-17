@@ -14,18 +14,15 @@ titleList.appendChild(titleElement);
 document.body.appendChild(titleList);
 
 //Create content from one json
-var contentIndex = 0;
+var topLevelContentIndex = 0;
 var dataJson = "git";
 dataJsonPath = `data/${dataJson}.json`;
-
 readJSON(dataJsonPath);
 
-
-
-function readJSON(dataJson){
+function readJSON(dataJson, topLevelContentIndex){
     const newList = document.createElement("class");
     newList.className = "cheatCodeCollection";
-    newList.id = `testId`;
+    newList.id = `topLevelCheatCodeCollection${topLevelContentIndex}`;
 
     // Find element with main id and add new class `cheatCodeCollection${index}` to it.
     const mainElement = document.querySelector("[id^=main]");
