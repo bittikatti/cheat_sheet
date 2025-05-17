@@ -33,15 +33,12 @@ function readJSON(dataJson, topLevelContentIndex){
 
     .then((data) => {
         // Create one top level title for this json
-        const subtitleElement = document.createElement("h1");
-        subtitleElement.className = "cheatBlock";
-        subtitleElement.textContent = data.Heading1;
+        subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
         newList.appendChild(subtitleElement);
         
         for (var content of data.Contents){
             //Create sub content on subtitle level
             populateFromContentDict(newList, content, subLevelContentIndex);
-            
             subLevelContentIndex = subLevelContentIndex + 1;
         }
         
@@ -59,39 +56,33 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     subList.className = "cheatCodeCollection";
     subList.id = `cheatCodeCollection${subLevelContentIndex}`;
 
-    // Add Subtitle
-    const subtitleElement = document.createElement("h2");
-    subtitleElement.className = "cheatBlock";
-    subtitleElement.textContent = content.Subtitle;
+    // Add Subtitle and short intro under that
+    subtitleElement = createTextElement("h2", "cheatBlock", content.Subtitle);
     subList.appendChild(subtitleElement);
-
-    // Intro under the subtitle
-    const introElement = document.createElement("div");
-    introElement.className = "cheatBlock";
-    introElement.textContent = content.Intro;
+    introElement = createTextElement("div", "cheatBlock", content.Intro);
     subList.appendChild(introElement);
 
-    // Contents
+    // Add commands with their short explanations
     for (const cheat of content.Cheats) {
         const cheatBlockElement = document.createElement("div");
         cheatBlockElement.className = "cheatBlock";
 
-        const explanationElement = document.createElement("div"); // Would like this to be a explanation element type
-        explanationElement.className = "cheatExplanationBlock";
-        explanationElement.textContent = cheat.Explanation;
-
-        const cheatElement = document.createElement("div"); // Would like this to be a code block element type
-        cheatElement.className = "codeBlock";
-        cheatElement.textContent = cheat.Cheat;
+        explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
+        cheatElement = createTextElement("div", "codeBlock", cheat.Cheat);
 
         cheatBlockElement.append(
             explanationElement,
             cheatElement
     );
     subList.appendChild(cheatBlockElement);
-
     newList.appendChild(subList);
     }
 }
 
+function createTextElement(type, className, value){
+    const element = document.createElement(type); // Would like this to be a explanation element type
+    element.className = className;
+    element.textContent = value;
+    return element;
+}
 
