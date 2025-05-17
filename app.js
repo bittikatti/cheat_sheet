@@ -47,7 +47,12 @@ function readJSON(dataJson, topLevelContentIndex){
 }
 
 function testAddingOneBlock(contents, newList){
-    // Add a cheat block with content size as 
+    // Add a cheat block with content size as
+    const subtitleElement = document.createElement("h2");
+    subtitleElement.className = "cheatBlock"
+    subtitleElement.textContent = "Aliotsikko"
+    newList.appendChild(subtitleElement);
+    
     const introElement = document.createElement("div");
     introElement.className = "cheatBlock"
     introElement.textContent = `contents length ${contents.length}`;
