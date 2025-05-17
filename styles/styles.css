@@ -8,8 +8,10 @@ body {
 
 a{
   color:rgb(45, 240, 224);
-  text-decoration:none;
-  cursor: crosshair;
+}
+
+a{
+  color:rgb(240 243 243);
 }
 
 h1, h2, h3,
