@@ -19,7 +19,6 @@ function readJSON(dataJson, topLevelContentIndex){
     newList.id = `topLevelCheatCodeCollection${topLevelContentIndex}`;
 
     // Find element with main id and add new class `cheatCodeCollection${index}` to it.
-    // const mainElement = document.querySelector("[id^=main]");
     mainContent.appendChild(newList);
 
     fetch(dataJson)
@@ -36,7 +35,8 @@ function readJSON(dataJson, topLevelContentIndex){
         subtitleElement.className = "cheatBlock";
         subtitleElement.textContent = data.Heading1;
         newList.appendChild(subtitleElement);
-        
+
+        testAddingOneBlock(data.Contents, newList)
         
     })
     .catch((error) => {
@@ -44,6 +44,14 @@ function readJSON(dataJson, topLevelContentIndex){
         p.appendChild(document.createTextNode(`Error: ${error.message}`));
         document.body.insertBefore(p, titleList);
     });
+}
+
+function testAddingOneBlock(contents, newList){
+    // Add a cheat block with content size as 
+    const introElement = document.createElement("div");
+    introElement.className = "cheatBlock"
+    introElement.textContent = `contents length ${contents.length}`;
+    newList.appendChild(introElement);
 }
 
 // Create contents from jsons
