@@ -50,7 +50,7 @@ function readJSON(dataJson){
 const git_data_jsons = ["git_not_in_your_mahcine", "revert_reset_regular_commits", "revert_reset_merges","log_commands", "branches"];
 var index = 0;
 for (var path of git_data_jsons) {
-    populateFromJson(`data/git/${path}.json`, index)
+    //populateFromJson(`data/git/${path}.json`, index)
     index = index + 1;
 }
 
