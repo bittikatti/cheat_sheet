@@ -1,0 +1,92 @@
+{
+    "Heading1" : "Git",
+    "Contents" :
+    [
+        {
+            "Subtitle" : "Git user configs",
+            "Intro" : "When you regularly do work on computers that other users use.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Unset user.name and user.email from git globally and locally. Unsets only for the windows user that runs this command and the local repo, where this is run. Does not unset global configs of other windows users in the machine.",
+                    "Cheat" : "git config --local --unset user.name && git config --local --unset user.email && git config --global --unset user.name && git config --global --unset user.email"
+                },
+                {
+                    "Explanation" : "Set your github user in your windows user globally. (Do not run in a local repo even with the --global tag.)",
+                    "Cheat" : "git config --global user.name 'MyGitHubUserName' && git config --global user.email 'my.email@address.com'"
+                },
+                {
+                    "Explanation" : "Edit commit author if you cannot set git config globally. This bypasses even the user config set in --local. Use this when you are not the only one with access to this machine.",
+                    "Cheat" : "git commit --author='Author Name <email@address.com>' -m '<Enter a commit message>'"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "'Undo' bad commits",
+            "Intro" : "Addicents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Unpushed regular commit, but keep changes",
+                    "Cheat" : "git reset --soft HEAD~1"
+                },
+                {
+                    "Explanation" : "(Avoid using this) Unpushed regular commit. Trash the changes.",
+                    "Cheat" : "git reset --hard HEAD~1"
+                },
+                {
+                    "Explanation" : "Pushed regular commit",
+                    "Cheat" : "git revert -- <commit id you want to flip>"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Merge commit went sideways",
+            "Intro" : "Take a deep breath and eat, if it has been too long already; this is most likely is going to take a lot of energy to fix correctly. You may also need help with this and/or may need to notify someone (to later revert the reverted merge commit if necessary).",
+            "Cheats" : [
+                {
+                    "Explanation" : "Unpushed merge commit. Git reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
+                    "Cheat" : "Depends. Not sure."
+                },
+                {
+                    "Explanation" : "Pushed merge commit. Revert is not ctrl+Z, it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
+                    "Cheat" : "git revert -m 1/2 <commit you want to get to in the parent branch>"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Git log commands",
+            "Intro" : "Self explainatory subtitle",
+            "Cheats" : [
+                {
+                    "Explanation" : "Seaching for word within any file from history",
+                    "Cheat" : "git log -S"
+                },
+                {
+                    "Explanation" : "Nice graph of commits (shows branching). Github's Insights > Networking has better UI.",
+                    "Cheat" : "git log --all --decorate --oneline --graph"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Git branches",
+            "Intro" : "Create and delete branches",
+            "Cheats" : [
+                {
+                    "Explanation" : "Create a completely new branch",
+                    "Cheat" : "git checkout -b <branch name>"
+                },
+                {
+                    "Explanation" : "Create a local branch and set it to trace an existing remote branch.",
+                    "Cheat" : "git checkout -b <branch name> origin/<branch name>"
+                },
+                {
+                    "Explanation" : "Remove local branch. -d needs to be capitalized (-D) if branch was unmerged.",
+                    "Cheat" : "git branch -d <branch name>"
+                },
+                {
+                    "Explanation" : "Remove remote branch tracking. Remeber to remove the branch from remote repository too.",
+                    "Cheat" : "git branch -rd origin/<branch name>"
+                }
+            ]
+        }
+    ]
+}
