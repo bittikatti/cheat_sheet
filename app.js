@@ -18,12 +18,26 @@ var gitJson = `data/git.json`;
 readJSON(gitJson);
 
 function readJSON(dataJson){
+    const myList = document.createElement("class");
+    myList.className = "cheatCodeCollection";
+    myList.id = `testId`;
+
+    // Find element with main id and add new class `cheatCodeCollection${index}` to it.
+    const mainElement = document.querySelector("[id^=main]");
+    mainElement.appendChild(myList);
+
     fetch(dataJson)
     .then((response) => {
         if (!response.ok) {
             throw new Error(`Unable to fetch ${dataJson}. Status = ${response.status}`);
         }
         return response.json();
+    })
+    .then((data) => {
+        const subtitleElement = document.createElement("h2");
+        subtitleElement.className = "cheatBlock"
+        subtitleElement.textContent = `This is from combined git.json ${data.Heading1}`
+        myList.appendChild(subtitleElement);
     })
     .catch((error) => {
         const p = document.createElement("p");
