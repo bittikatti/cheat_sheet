@@ -39,7 +39,7 @@ function readJSON(dataJson, topLevelContentIndex){
         subtitleElement.textContent = data.Heading1;
         newList.appendChild(subtitleElement);
 
-        testAddingOneBlock(data.Contents, newList)
+        testAddingOneBlock(data.Contents, newList);
         
         for (var content of data.Contents){
             //Create sub content on subtitle level
@@ -47,6 +47,7 @@ function readJSON(dataJson, topLevelContentIndex){
             
             subLevelContentIndex = subLevelContentIndex + 1;
         }
+        testAddingOneBlock(data.Contents, newList);
         
     })
     .catch((error) => {
