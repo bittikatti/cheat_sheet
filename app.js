@@ -14,16 +14,11 @@ titleList.appendChild(titleElement);
 document.body.appendChild(titleList);
 
 //Create content from one json
-git_json = "git";
-const dataJsons = [git_json];
-for (var dataJson in dataJsons){
-    var contentIndex = 0;
-    dataJsonPath = `data/${dataJson}.json`;
+var contentIndex = 0;
+var dataJson = "git";
+dataJsonPath = `data/${dataJson}.json`;
 
-    readJSON(dataJsonPath);
-    // To create new content block
-    contentIndex = contentIndex + 1;
-}
+readJSON(dataJsonPath);
 
 
 
