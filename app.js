@@ -1,11 +1,11 @@
 var document;
 
 // Create web elements for each git data json file
-const titleList = document.createElement("class");
-titleList.className = "mainStyle";
-titleList.id = `main`;
+const mainContent = document.createElement("class");
+mainContent.className = "mainStyle";
+mainContent.id = `main`;
 
-document.body.appendChild(titleList);
+document.body.appendChild(mainContent);
 
 //Create content from one json
 var topLevelContentIndex = 0;
@@ -19,8 +19,8 @@ function readJSON(dataJson, topLevelContentIndex){
     newList.id = `topLevelCheatCodeCollection${topLevelContentIndex}`;
 
     // Find element with main id and add new class `cheatCodeCollection${index}` to it.
-    const mainElement = document.querySelector("[id^=main]");
-    mainElement.appendChild(newList);
+    // const mainElement = document.querySelector("[id^=main]");
+    mainContent.appendChild(newList);
 
     fetch(dataJson)
     .then((response) => {
@@ -36,7 +36,7 @@ function readJSON(dataJson, topLevelContentIndex){
         subtitleElement.className = "cheatBlock";
         subtitleElement.textContent = data.Heading1;
         newList.appendChild(subtitleElement);
-
+        
         
     })
     .catch((error) => {
