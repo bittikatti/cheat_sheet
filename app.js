@@ -73,6 +73,7 @@ function populateFromJson(data_json_path, index){
         );
         myList.appendChild(cheatBlockElement);
         }
+        document.body.appendChild(myList);
     })
     .catch((error) => {
         const p = document.createElement("p");
