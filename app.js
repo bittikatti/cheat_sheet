@@ -14,7 +14,8 @@ titleList.appendChild(titleElement);
 document.body.appendChild(titleList);
 
 //Create content from one json
-const dataJsons = ["git"];
+git_json = "git";
+const dataJsons = [git_json];
 for (var dataJson in dataJsons){
     var contentIndex = 0;
     dataJsonPath = `data/${dataJson}.json`;
@@ -38,7 +39,7 @@ function readJSON(dataJson){
     fetch(dataJson)
     .then((response) => {
         if (!response.ok) {
-            throw new Error(`Unable to fetch ${dataJson}. Status = ${response.status}`);
+            throw new Error(`readJSON Unable to fetch ${dataJson}. Status = ${response.status}`);
         }
         return response.json();
     })
