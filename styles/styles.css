@@ -6,6 +6,12 @@ body {
     font-size: 18px;
 }
 
+a{
+  color:rgb(45, 240, 224);
+  text-decoration:none;
+  cursor: crosshair;
+}
+
 h1, h2, h3,
 h4, h5, h6,
 .customHeading {
