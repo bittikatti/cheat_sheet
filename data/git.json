@@ -11,7 +11,7 @@
                     "Cheat" : "git config --local --unset user.name && git config --local --unset user.email && git config --global --unset user.name && git config --global --unset user.email"
                 },
                 {
-                    "Explanation" : "Set your github user in your windows user globally. (Do not run in a local repo even with the --global tag.)",
+                    "Explanation" : "Set your github user in your windows user globally.",
                     "Cheat" : "git config --global user.name 'MyGitHubUserName' && git config --global user.email 'my.email@address.com'"
                 },
                 {
@@ -22,7 +22,7 @@
         },
         {
             "Subtitle" : "'Undo' bad commits",
-            "Intro" : "Addicents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
+            "Intro" : "Accidents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
             "Cheats" : [
                 {
                     "Explanation" : "Unpushed regular commit, but keep changes",
@@ -40,7 +40,7 @@
         },
         {
             "Subtitle" : "Merge commit went sideways",
-            "Intro" : "Take a deep breath and eat, if it has been too long already; this is most likely is going to take a lot of energy to fix correctly. You may also need help with this and/or may need to notify someone (to later revert the reverted merge commit if necessary).",
+            "Intro" : "Take a deep breath; this is most likely is going to take a lot of energy to fix correctly. You may also need help with this and/or may need to notify someone (to later revert the reverted merge commit if necessary).",
             "Cheats" : [
                 {
                     "Explanation" : "Unpushed merge commit. Git reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
@@ -54,10 +54,10 @@
         },
         {
             "Subtitle" : "Git log commands",
-            "Intro" : "Self explainatory subtitle",
+            "Intro" : "Self explanatory subtitle",
             "Cheats" : [
                 {
-                    "Explanation" : "Seaching for word within any file from history",
+                    "Explanation" : "Searching for word within any file from history",
                     "Cheat" : "git log -S"
                 },
                 {
@@ -83,7 +83,7 @@
                     "Cheat" : "git branch -d <branch name>"
                 },
                 {
-                    "Explanation" : "Remove remote branch tracking. Remeber to remove the branch from remote repository too.",
+                    "Explanation" : "Remove remote branch tracking. Remember to remove the branch from remote repository too.",
                     "Cheat" : "git branch -rd origin/<branch name>"
                 }
             ]
