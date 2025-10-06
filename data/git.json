@@ -21,6 +21,16 @@
             ]
         },
         {
+            "Subtitle" : "Edit commit message",
+            "Intro" : "Small edits to commit messages. Amending the commit message changes the commit sha, thus amending pushed commits of branches edited simultaneously by multiple people will cause 'unrelated histories' merge conflicts.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Latest unpushed commit.",
+                    "Cheat" : "git commit --amend -m <insert the new commit message>"
+                }
+            ]
+        },
+        {
             "Subtitle" : "'Undo' bad commits",
             "Intro" : "Accidents happen. Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
             "Cheats" : [
