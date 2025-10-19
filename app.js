@@ -11,8 +11,18 @@ document.body.appendChild(mainContent);
 var topLevelContentIndex = 0;
 var subLevelContentIndex = 0;
 
-jsonFile = document.currentScript.getAttribute("file");
-readJSON(`data/${jsonFile}.json`);
+const cheatCodeList = getCheatCodeList('list');
+readJSON(`data/${cheatCodeList}.json`);
+
+function getCheatCodeList(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
 
 function readJSON(dataJson, topLevelContentIndex){
