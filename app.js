@@ -1,7 +1,7 @@
 var document;
 
 // Create web elements for each git data json file
-const mainContent = document.createElement("class");
+const mainContent = document.createElement("div");
 mainContent.className = "mainStyle";
 mainContent.id = `main`;
 
@@ -57,7 +57,7 @@ function readJSON(dataJson, topLevelContentIndex){
     .catch((error) => {
         const p = document.createElement("p");
         p.appendChild(document.createTextNode(`Error: ${error.message}`));
-        document.body.insertBefore(p, titleList);
+        document.body.insertBefore(p, mainContent);
     });
 }
 
