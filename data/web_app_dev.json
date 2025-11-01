@@ -18,7 +18,7 @@
                 },
                 {
                     "Explanation" : "Afterwards you can kill the processes in the port you used above.",
-                    "Cheat" : "npx kill-port 8080",
+                    "Cheat" : "npx kill-port 8000",
                     "Class" : "cmdBlock"
                 }
             ]
