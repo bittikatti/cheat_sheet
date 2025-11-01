@@ -41,11 +41,16 @@ h4, h5, h6,
 
 .codeBlock {
     background-color: rgb(0 30 30);
-    border-radius: 10px;
-    padding: 1rem;
+    border-radius: 5px;
     font-family: monospace;
     margin-left:1rem;
     margin-right:1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.codeText {
+    padding: 1rem;
 }
 
 .cmdBlock {

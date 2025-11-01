@@ -84,7 +84,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
         if (cheat.Class == "cmdBlock"){
             cheatElement = createCmdBlock(cheat.Cheat);
         } else {
-            cheatElement = createTextElement("div", cheat.Class, cheat.Cheat);
+            cheatElement = createCodeBlock(cheat.Cheat);
         }
 
         cheatBlockElement.append(
@@ -101,6 +101,18 @@ function createTextElement(type, className, value){
     element.className = className;
     element.textContent = value;
     return element;
+}
+
+function createCodeBlock(cheat){
+    cheatElement = createTextElement("div", "codeBlock", "");
+
+    const codeTextElement = createTextElement("div", "codeText", cheat);
+    cheatElement.appendChild(codeTextElement);
+
+    svg = createCopyIconSvg();
+    cheatElement.appendChild(svg);
+    
+    return cheatElement;
 }
 
 function createCmdBlock(cheat){
