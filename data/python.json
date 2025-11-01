@@ -4,7 +4,7 @@
     [
         {
             "Subtitle" : "Selenium",
-            "Intro" : "",
+            "Intro" : "Some snippets for selenium.",
             "Cheats" : [
                 {
                     "Explanation" : "Open Chrome with specified download folder.",
