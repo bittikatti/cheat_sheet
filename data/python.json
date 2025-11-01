@@ -1,0 +1,18 @@
+{
+    "Heading1" : "Python",
+    "Contents" :
+    [
+        {
+            "Subtitle" : "Selenium",
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "Open Chrome with specified download folder.",
+                    "Cheat" : "options = webdriver.ChromeOptions()\noptions.add_experimental_option('prefs', {'download.default_directory' : '\\data\\downloads'})\ndriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)",
+                    "Class" : "codeBlock"
+                }
+            ]
+        }
+        
+    ]
+}
