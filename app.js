@@ -112,7 +112,44 @@ function createCmdBlock(cheat){
     cmdBlock.appendChild(topBarElement);
 
     // The command itself
+    const cmdBlack = createTextElement("div", "cmdBlack", "");
+    cmdBlock.appendChild(cmdBlack);
+
     const cmdText = createTextElement("div", "cmdText", cheat);
-    cmdBlock.appendChild(cmdText);
+    cmdBlack.appendChild(cmdText);
+
+    // copy icon from https://icons.getbootstrap.com/icons/copy/
+    svg = createCopyIconSvg();
+    cmdBlack.appendChild(svg);
+    
     return cmdBlock;
+}
+
+function createCopyIconSvg(){
+    //<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+        //<path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+    //</svg>
+    const container = document.createElement("div");
+    container.className = "copyIcon";
+
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+
+    // Styles
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "16");
+    svg.setAttribute("fill", "currentColor");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    // Path
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("fill-rule", "evenodd");
+    path.setAttribute(
+        "d",
+        "M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+    );
+    // Append the path to the SVG
+    svg.appendChild(path);
+    container.appendChild(svg);
+    return container;
 }

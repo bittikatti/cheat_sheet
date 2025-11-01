@@ -49,10 +49,6 @@ h4, h5, h6,
 }
 
 .cmdBlock {
-    background-color: rgb(20 20 20);
-    color: white;
-    border-radius: 5px;
-    font-family: monospace;
     margin-left:1rem;
     margin-right:1rem;
 }
@@ -69,8 +65,17 @@ h4, h5, h6,
     color: white;
     padding: 1rem;
     font-family: monospace;
-    margin-left:1rem;
-    margin-right:1rem;
+}
+
+.cmdBlack {
+    background-color: rgb(20 20 20);
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.copyIcon {
+    padding: 1rem;
 }
 
 .customHeading {
