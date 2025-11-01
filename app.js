@@ -80,7 +80,12 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
         cheatBlockElement.className = "cheatBlock";
 
         explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
-        cheatElement = createTextElement("div", cheat.Class, cheat.Cheat);
+
+        if (cheat.Class == "cmdBlock"){
+            cheatElement = createCmdBlock(cheat.Cheat);
+        } else {
+            cheatElement = createTextElement("div", cheat.Class, cheat.Cheat);
+        }
 
         cheatBlockElement.append(
             explanationElement,
@@ -98,3 +103,16 @@ function createTextElement(type, className, value){
     return element;
 }
 
+function createCmdBlock(cheat){
+    // The black background
+    const cmdBlock = createTextElement("div", "cmdBlock", "");
+
+    // The white top bar
+    const topBarElement = createTextElement("div", "cmdTopBar", "");
+    cmdBlock.appendChild(topBarElement);
+
+    // The command itself
+    const cmdText = createTextElement("div", "cmdText", cheat);
+    cmdBlock.appendChild(cmdText);
+    return cmdBlock;
+}
