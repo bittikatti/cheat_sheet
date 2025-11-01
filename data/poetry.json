@@ -1,0 +1,23 @@
+{
+    "Heading1" : "Poetry",
+    "Contents" :
+    [
+        {
+            "Subtitle" : "Settings at first installation",
+            "Intro" : "When installing poetry on the machine for the first time, these commands are usually handy to set venv and project at the root of the local repository.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Create virtual environment for python in .venv folder of the local repository.",
+                    "Cheat" : "poetry config virtualenvs.in-project true",
+                    "Class" : "cmdBlock"
+                },
+                {
+                    "Explanation" : "",
+                    "Cheat" : "poetry config virtualenvs.path .venv",
+                    "Class" : "cmdBlock"
+                }
+            ]
+        }
+        
+    ]
+}
