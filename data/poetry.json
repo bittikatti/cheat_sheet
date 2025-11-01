@@ -17,7 +17,27 @@
                     "Class" : "cmdBlock"
                 }
             ]
+        },
+        {
+            "Subtitle" : "Use other python version that the default global",
+            "Intro" : "The other python version needs to be already installed in the machine for this to work.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Create just the venv using another python version. No dependencies are yet installed.",
+                    "Cheat" : "poetry env use </full/path/to/python.exe>",
+                    "Class" : "cmdBlock"
+                },
+                {
+                    "Explanation" : "Usually like this:",
+                    "Cheat" : "poetry env use 'C:\\Program Files\\Python310'",
+                    "Class" : "cmdBlock"
+                },
+                {
+                    "Explanation" : "Then like you would normally do:",
+                    "Cheat" : "poetry install",
+                    "Class" : "cmdBlock"
+                }
+            ]
         }
-        
     ]
 }
