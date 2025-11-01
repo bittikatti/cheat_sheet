@@ -99,6 +99,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
 function createTextElement(type, className, value){
     const element = document.createElement(type); // Would like this to be a explanation element type
     element.className = className;
+    // Replace tabulator and line break with HTML equivalents
     element.innerHTML = String(value).replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>")
     return element;
 }
