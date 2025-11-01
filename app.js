@@ -109,9 +109,9 @@ function createCodeBlock(cheat){
     const codeTextElement = createTextElement("div", "codeText", cheat);
     cheatElement.appendChild(codeTextElement);
 
-    svg = createCopyIconSvg();
-    cheatElement.appendChild(svg);
-    
+    svgIconContainer = createCopyIconSvg();
+    cheatElement.appendChild(svgIconContainer);
+
     return cheatElement;
 }
 
@@ -131,8 +131,8 @@ function createCmdBlock(cheat){
     cmdBlack.appendChild(cmdText);
 
     // copy icon from https://icons.getbootstrap.com/icons/copy/
-    svg = createCopyIconSvg();
-    cmdBlack.appendChild(svg);
+    svgIconContainer = createCopyIconSvg();
+    cmdBlack.appendChild(svgIconContainer);
     
     return cmdBlock;
 }
