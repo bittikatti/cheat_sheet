@@ -80,7 +80,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
         cheatBlockElement.className = "cheatBlock";
 
         explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
-        cheatElement = createTextElement("div", "codeBlock", cheat.Cheat);
+        cheatElement = createTextElement("div", cheat.Class, cheat.Cheat);
 
         cheatBlockElement.append(
             explanationElement,

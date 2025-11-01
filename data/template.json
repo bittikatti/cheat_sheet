@@ -8,11 +8,13 @@
             "Cheats" : [
                 {
                     "Explanation" : "",
-                    "Cheat" : ""
+                    "Cheat" : "",
+                    "Class" : "<Code editor style (codeBlock) or command line style (cmdBlock)>"
                 },
                 {
                     "Explanation" : "",
-                    "Cheat" : ""
+                    "Cheat" : "",
+                    "Class" : ""
                 }
             ]
         }

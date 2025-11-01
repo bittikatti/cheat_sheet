@@ -8,7 +8,8 @@
             "Cheats" : [
                 {
                     "Explanation" : "Create a project with project and folder name 'Project-Name'.",
-                    "Cheat" : "dotnet new console -o 'Project-Name'"
+                    "Cheat" : "dotnet new console -o 'Project-Name'",
+                    "Class" : "cmdBlock"
                 }
             ]
         }
