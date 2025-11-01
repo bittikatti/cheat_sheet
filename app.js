@@ -99,7 +99,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
 function createTextElement(type, className, value){
     const element = document.createElement(type); // Would like this to be a explanation element type
     element.className = className;
-    element.innerHTML = String(value).replace(/\"/g, "").replace(/\n/g, "<br>");
+    element.innerHTML = String(value).replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>")
     return element;
 }
 
