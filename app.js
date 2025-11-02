@@ -97,10 +97,21 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
 }
 
 function createTextElement(type, className, value){
+    /**
+    Creates a text element with given value
+    The value is placed inside textContent, if the value includes '<' and '>' tags.
+    OR the value is placed inside innerHTML if such tags are not included.
+    ATM Multiline html code snippets will not be shown correctly.
+    */
     const element = document.createElement(type); // Would like this to be a explanation element type
     element.className = className;
-    // Replace tabulator and line break with HTML equivalents
-    element.innerHTML = String(value).replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>")
+    if (value.indexOf('<') > -1 && value.indexOf('>') > -1){
+        // If <> is included, use textContext to avoid it becoming part of the DOM.
+        element.textContent = value;
+    } else {
+        // Replace tabulator and line break with HTML equivalents
+        element.innerHTML = String(value).replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>");
+    }
     return element;
 }
 

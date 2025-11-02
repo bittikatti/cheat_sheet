@@ -19,12 +19,12 @@
             ]
         },
         {
-            "Subtitle" : "Use other python version that the default global",
+            "Subtitle" : "Use other python version than the default global",
             "Intro" : "The other python version needs to be already installed in the machine for this to work.",
             "Cheats" : [
                 {
                     "Explanation" : "Create just the venv using another python version. No dependencies are yet installed.",
-                    "Cheat" : "poetry env use </full/path/to/python.exe>",
+                    "Cheat" : "poetry env use '/full/path/to/python.exe'",
                     "Class" : "cmdBlock"
                 },
                 {
