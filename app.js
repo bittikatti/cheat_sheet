@@ -2,7 +2,7 @@ var document;
 
 // Create web elements for each git data json file
 const mainContent = document.createElement("div");
-mainContent.className = "mainStyle";
+mainContent.className = "container mainStyle";
 mainContent.id = `main`;
 
 document.body.appendChild(mainContent);

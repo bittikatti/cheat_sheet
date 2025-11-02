@@ -1,10 +1,22 @@
 body {
-    padding: 1rem;
     background-color: rgb(1, 50, 50);
     color:rgb(140, 243, 234);
     font-family: Arial;
     font-size: 18px;
     line-height: 30px;
+}
+
+/* On small screens, reduce the padding */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 0.5rem; /* less padding on mobile */
+    }
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
 }
 
 a{
@@ -27,8 +39,8 @@ h4, h5, h6,
 }
 
 .cheatBlock{
-    padding-top:1rem;
-    padding-bottom:1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .cheatExplanationBlock{
