@@ -29,7 +29,7 @@
             "Cheats" : [
                 {
                     "Explanation" : "Latest unpushed commit.",
-                    "Cheat" : "git commit --amend -m <insert the new commit message>",
+                    "Cheat" : "git commit --amend -m '<insert the new commit message>'",
                     "Class" : "cmdBlock"
                 }
             ]
@@ -50,7 +50,7 @@
                 },
                 {
                     "Explanation" : "Pushed regular commit",
-                    "Cheat" : "git revert -- <commit id you want to flip>",
+                    "Cheat" : "git revert -- <insert commit id you want to flip>",
                     "Class" : "cmdBlock"
                 }
             ]
@@ -66,7 +66,7 @@
                 },
                 {
                     "Explanation" : "Pushed merge commit. Revert is not ctrl+Z, it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
-                    "Cheat" : "git revert -m 1/2 <commit you want to get to in the parent branch>",
+                    "Cheat" : "git revert -m 1/2 <insert commit you want to get to in the parent branch>",
                     "Class" : "cmdBlock"
                 }
             ]
