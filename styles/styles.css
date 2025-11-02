@@ -1,5 +1,5 @@
 body {
-    padding: 3rem;
+    padding: 1rem;
     background-color: rgb(1, 50, 50);
     color:rgb(140, 243, 234);
     font-family: Arial;
@@ -20,11 +20,6 @@ h4, h5, h6,
 .customHeading {
     color:rgb(45, 240, 224);
     line-height: 1em;
-}
-
-.mainStyle{
-    padding:1rem;
-    padding-bottom:2rem;
 }
 
 .cheatCodeCollection{
