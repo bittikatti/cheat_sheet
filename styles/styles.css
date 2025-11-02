@@ -47,11 +47,13 @@ h4, h5, h6,
     margin-left:1rem;
     margin-right:1rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.codeText {
+.cmdText, .codeText {
     padding: 1rem;
+    max-width: 90%;
 }
 
 .cmdBlock {
@@ -70,18 +72,19 @@ h4, h5, h6,
 
 .cmdText {
     color: white;
-    padding: 1rem;
 }
 
 .cmdBlack {
     background-color: rgb(20 20 20);
     display: flex;
+    flex-wrap: wrap;
     border-radius: 5px;
     justify-content: space-between;
 }
 
 .copyIcon {
     padding: 1rem;
+    margin-left: auto;
 }
 
 .copyIcon:hover {
