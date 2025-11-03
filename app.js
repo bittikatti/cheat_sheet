@@ -105,7 +105,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     }
 }
 
-function createTextElement(type, className, value, renderTagsAsHtml=true){
+function createTextElement(type, className, value, renderTagsAsHtml=true, replaceJsonFormatWithHtml=true){
     /**
     Creates a text element with given value
     The value is placed inside textContent, if the value includes '<' and '>' tags and renderTagsAsHtml is false.
@@ -115,13 +115,18 @@ function createTextElement(type, className, value, renderTagsAsHtml=true){
     const element = document.createElement(type); // Would like this to be a explanation element type
     element.className = className;
 
+    if (replaceJsonFormatWithHtml == true) {
+        // Replace tabulator and line break with HTML equivalents
+        value = String(value).replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>");
+    }
+
     if (renderTagsAsHtml == false ){
         // If <> is included, use textContext to avoid it becoming part of the DOM.
         element.textContent = value;
     } else {
         // Prism.highlightAll() needs the input in here.
         // innerHTML renders as html
-        element.innerHTML = String(value)//.replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>");
+        element.innerHTML = String(value);
     }
     return element;
 }
@@ -131,7 +136,7 @@ function createHighlightedCodeBlock(cheat){
     // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
     const preElement = document.createElement("pre");
     cheatElement.appendChild(preElement);
-    const codeTextElement = createTextElement("code", "language-python", cheat);
+    const codeTextElement = createTextElement("code", "language-python", cheat, replaceJsonFormatWithHtml=false);
     preElement.appendChild(codeTextElement);
 
     svgIconContainer = createCopyIconSvg(cheat);
