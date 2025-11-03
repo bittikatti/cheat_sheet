@@ -140,7 +140,7 @@ function createHighlightedCodeBlock(cheat){
     // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
     const preElement = document.createElement("pre");
     cheatElement.appendChild(preElement);
-    const codeTextElement = createTextElement("code", "language-python", cheat, replaceJsonFormatWithHtml=false);
+    const codeTextElement = createTextElement("code", "language-python", cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
     preElement.appendChild(codeTextElement);
 
     svgIconContainer = createCopyIconSvg(cheat);
