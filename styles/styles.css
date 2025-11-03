@@ -38,6 +38,7 @@ h4, h5, h6,
 .customHeading {
     color:rgb(45, 240, 224);
     line-height: 1em;
+    margin: 0;
 }
 
 .cheatCodeCollection{
@@ -50,7 +51,7 @@ h4, h5, h6,
 }
 
 .cheatExplanationBlock{
-    padding: 1rem;
+    padding-bottom: 1rem;
 }
 
 .codeBlock {
@@ -70,8 +71,6 @@ h4, h5, h6,
 }
 
 .cmdBlock {
-    margin-left:1rem;
-    margin-right:1rem;
     font-family: monospace;
 }
 
