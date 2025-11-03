@@ -19,6 +19,12 @@ body {
     margin: 0 auto;
 }
 
+code[class*="language-"],
+pre[class*="language-"] {
+    margin: 0 0 !important;
+    width: 92%;
+}
+
 a{
   color:rgb(45, 240, 224);
 }
@@ -48,7 +54,7 @@ h4, h5, h6,
 }
 
 .codeBlock {
-    background-color: rgb(0 30 30);
+    background-color: #272822;
     border-radius: 5px;
     font-family: monospace;
     margin-left:1rem;
@@ -60,7 +66,7 @@ h4, h5, h6,
 
 .cmdText, .codeText {
     padding: 1rem;
-    max-width: 90%;
+    max-width: 92%;
 }
 
 .cmdBlock {

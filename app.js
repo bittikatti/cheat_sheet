@@ -84,7 +84,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
         if (cheat.Class == "cmdBlock"){
             cheatElement = createCmdBlock(cheat.Cheat);
         } else {
-            cheatElement = createCodeBlock(cheat.Cheat);
+            cheatElement = createHighlightedCodeBlock(cheat.Cheat);
         }
 
         cheatBlockElement.append(
@@ -110,16 +110,18 @@ function createTextElement(type, className, value){
         element.textContent = value;
     } else {
         // Replace tabulator and line break with HTML equivalents
-        element.innerHTML = String(value).replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>");
+        element.innerHTML = String(value)//.replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>");
     }
     return element;
 }
 
-function createCodeBlock(cheat){
+function createHighlightedCodeBlock(cheat){
     cheatElement = createTextElement("div", "codeBlock", "");
-
-    const codeTextElement = createTextElement("div", "codeText", cheat);
-    cheatElement.appendChild(codeTextElement);
+    // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
+    const preElement = document.createElement("pre");
+    cheatElement.appendChild(preElement);
+    const codeTextElement = createTextElement("code", "language-python", cheat);
+    preElement.appendChild(codeTextElement);
 
     svgIconContainer = createCopyIconSvg(cheat);
     cheatElement.appendChild(svgIconContainer);
