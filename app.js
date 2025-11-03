@@ -73,7 +73,7 @@ function readJSON(dataJson, topLevelContentIndex){
 function populateFromContentDict(newList, content, subLevelContentIndex){
     // Create subheading with list of commands and their explanations.
     
-    const subList = document.createElement("class");
+    const subList = document.createElement("div");
     subList.className = "cheatCodeCollection";
     subList.id = `cheatCodeCollection${subLevelContentIndex}`;
 
