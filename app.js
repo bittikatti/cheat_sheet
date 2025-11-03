@@ -82,27 +82,31 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     subList.appendChild(subtitleElement);
     introElement = createTextElement("div", "cheatBlock", content.Intro);
     subList.appendChild(introElement);
+    
+    if ("Cheats" in content) {
+        // Add commands with their short explanations
+        for (const cheat of content.Cheats) {
+            const cheatBlockElement = document.createElement("div");
+            cheatBlockElement.className = "cheatBlock";
 
-    // Add commands with their short explanations
-    for (const cheat of content.Cheats) {
-        const cheatBlockElement = document.createElement("div");
-        cheatBlockElement.className = "cheatBlock";
+            explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
 
-        explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
+            if (cheat.Class == "cmdBlock"){
+                cheatElement = createCmdBlock(cheat.Cheat);
+            } else {
+                cheatElement = createHighlightedCodeBlock(cheat.Cheat);
+            }
 
-        if (cheat.Class == "cmdBlock"){
-            cheatElement = createCmdBlock(cheat.Cheat);
-        } else {
-            cheatElement = createHighlightedCodeBlock(cheat.Cheat);
+            cheatBlockElement.append(
+                explanationElement,
+                cheatElement
+            );
+            subList.appendChild(cheatBlockElement);
         }
-
-        cheatBlockElement.append(
-            explanationElement,
-            cheatElement
-        );
-        subList.appendChild(cheatBlockElement);
-        newList.appendChild(subList);
     }
+    
+    newList.appendChild(subList);
+    return;
 }
 
 function createTextElement(type, className, value, renderTagsAsHtml=true, replaceJsonFormatWithHtml=true){
