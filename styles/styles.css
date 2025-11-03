@@ -13,16 +13,11 @@ body {
     }
 }
 
+/* On wider screens, use max-width and auto margin to center the container */
 .container {
     max-width: 1200px;
     padding: 2rem;
     margin: 0 auto;
-}
-
-code[class*="language-"],
-pre[class*="language-"] {
-    margin: 0 0 !important;
-    width: 92%;
 }
 
 a{
@@ -65,7 +60,40 @@ h4, h5, h6,
     justify-content: space-between;
 }
 
-.cmdText, .codeText {
+code[class*="language-"],
+pre[class*="language-"] {
+    margin: 0 0 !important;
+    width: 92%;
+}
+
+/* Example of layout of code block
+<div class="codeBlock">
+    <pre class="  language-python">
+        <code class="  language-python">
+            [Prismjs does its magic here
+        </code>
+    </pre>
+    <div class="copyIcon">
+        <svg>[svg stuff here]</svg>
+    </div>
+</div>
+*/
+
+/* Example of layout of command line block
+<div class="cmdBlock">
+    <div class="cmdTopBar"></div>
+    <div class="cmdBlack">
+        <div class="cmdText">
+            Insert piece of command here
+        </div>
+        <div class="copyIcon">
+            <svg>[svg stuff here]</svg>
+        </div>
+    </div>
+</div>
+*/
+
+.cmdText {
     padding: 1rem;
     max-width: 92%;
 }
