@@ -105,20 +105,22 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     }
 }
 
-function createTextElement(type, className, value){
+function createTextElement(type, className, value, renderTagsAsHtml=true){
     /**
     Creates a text element with given value
-    The value is placed inside textContent, if the value includes '<' and '>' tags.
+    The value is placed inside textContent, if the value includes '<' and '>' tags and renderTagsAsHtml is false.
     OR the value is placed inside innerHTML if such tags are not included.
     ATM Multiline html code snippets will not be shown correctly.
     */
     const element = document.createElement(type); // Would like this to be a explanation element type
     element.className = className;
-    if (value.indexOf('<') > -1 && value.indexOf('>') > -1){
+
+    if (renderTagsAsHtml == false ){
         // If <> is included, use textContext to avoid it becoming part of the DOM.
         element.textContent = value;
     } else {
-        // Replace tabulator and line break with HTML equivalents
+        // Prism.highlightAll() needs the input in here.
+        // innerHTML renders as html
         element.innerHTML = String(value)//.replace(/\t/g, "&emsp;").replace(/\"/g, "").replace(/\n/g, "<br>");
     }
     return element;
@@ -150,7 +152,8 @@ function createCmdBlock(cheat){
     const cmdBlack = createTextElement("div", "cmdBlack", "");
     cmdBlock.appendChild(cmdBlack);
 
-    const cmdText = createTextElement("div", "cmdText", cheat);
+    // Keep <> tags as is in command line commands as there they are not html.
+    const cmdText = createTextElement("div", "cmdText", cheat, renderTagsAsHtml=false);
     cmdBlack.appendChild(cmdText);
 
     // copy icon from https://icons.getbootstrap.com/icons/copy/
