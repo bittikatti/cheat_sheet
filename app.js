@@ -43,15 +43,24 @@ function readJSON(dataJson, topLevelContentIndex){
     })
 
     .then((data) => {
-        // Create one top level title for this json
-        subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
-        newList.appendChild(subtitleElement);
+        // To make Prism style the html that is being loaded, call Prism highlight function after after loading and give some timeout.
+        setTimeout(
+            () => {
+                // Create one top level title for this json
+                subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
+                newList.appendChild(subtitleElement);
+                
+                for (var content of data.Contents){
+                    //Create sub content on subtitle level
+                    populateFromContentDict(newList, content, subLevelContentIndex);
+                    subLevelContentIndex = subLevelContentIndex + 1;
+                }
         
-        for (var content of data.Contents){
-            //Create sub content on subtitle level
-            populateFromContentDict(newList, content, subLevelContentIndex);
-            subLevelContentIndex = subLevelContentIndex + 1;
-        }
+            window.Prism.highlightAll();
+            },
+            1
+        );
+        
         
     })
     .catch((error) => {
