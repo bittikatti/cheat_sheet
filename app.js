@@ -7,11 +7,12 @@ mainContent.id = `main`;
 
 document.body.appendChild(mainContent);
 
-//Create content from one json
 var topLevelContentIndex = 0;
 var subLevelContentIndex = 0;
 
+// Determine, which json data set should be loaded to this page
 const cheatCodeList = getCheatCodeList('list');
+// Create content from one json
 readJSON(`data/${cheatCodeList}.json`);
 
 function getCheatCodeList(name, url) {
@@ -37,13 +38,15 @@ function readJSON(dataJson, topLevelContentIndex){
     fetch(dataJson)
     .then((response) => {
         if (!response.ok) {
+            // If the json was not loaded, throw error
             throw new Error(`readJSON Unable to fetch ${dataJson}. Status = ${response.status}`);
         }
         return response.json();
     })
 
     .then((data) => {
-        // To make Prism style the html that is being loaded, call Prism highlight function after after loading and give some timeout.
+        // Populate the html with the data from the json.
+        // To make Prism style the html that is being loaded, call Prism highlight function after after loading from the json and give some timeout.
         setTimeout(
             () => {
                 // Create one top level title for this json
@@ -64,6 +67,7 @@ function readJSON(dataJson, topLevelContentIndex){
         
     })
     .catch((error) => {
+        // Write any error into the DOM
         const p = document.createElement("p");
         p.appendChild(document.createTextNode(`Error: ${error.message}`));
         document.body.insertBefore(p, mainContent);
@@ -143,24 +147,29 @@ function createHighlightedCodeBlock(cheat){
     const codeTextElement = createTextElement("code", "language-python", cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
     preElement.appendChild(codeTextElement);
 
+    // Add the copy icon
     svgIconContainer = createCopyIconSvg(cheat);
     cheatElement.appendChild(svgIconContainer);
-
     return cheatElement;
 }
 
 function createCmdBlock(cheat){
-    // The black background
+    /**
+    Create a web element that looks like command terminal with white top bar, black terminal and copy button.
+    */
+
+    // A container for the terminal
     const cmdBlock = createTextElement("div", "cmdBlock", "");
 
     // The white top bar
     const topBarElement = createTextElement("div", "cmdTopBar", "");
     cmdBlock.appendChild(topBarElement);
 
-    // The command itself
+    // The black background
     const cmdBlack = createTextElement("div", "cmdBlack", "");
     cmdBlock.appendChild(cmdBlack);
 
+    // The command itself
     // Keep <> tags as is in command line commands as there they are not html.
     const cmdText = createTextElement("div", "cmdText", cheat, renderTagsAsHtml=false);
     cmdBlack.appendChild(cmdText);
@@ -168,14 +177,20 @@ function createCmdBlock(cheat){
     // copy icon from https://icons.getbootstrap.com/icons/copy/
     svgIconContainer = createCopyIconSvg(cheat);
     cmdBlack.appendChild(svgIconContainer);
-    
     return cmdBlock;
 }
 
 function createCopyIconSvg(cheat){
-    //<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
-        //<path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
-    //</svg>
+    /**
+    Copy icon that acts as a button
+    Includes event listener to copy the cheat code into clipboard
+
+    The copy icon is from bootstrap. End result is this.
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+    </svg>
+    */
+    
     const container = document.createElement("div");
     container.className = "copyIcon";
 
@@ -202,7 +217,6 @@ function createCopyIconSvg(cheat){
     container.addEventListener("click", ()=>{
         copy(cheat);
     });
-
     container.appendChild(svg);
     return container;
 }
