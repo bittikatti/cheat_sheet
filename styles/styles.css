@@ -21,11 +21,11 @@ body {
 }
 
 a{
-  color:rgb(240, 141, 73);
+  color:rgb(204, 204, 204);
 }
 
 a:active, a:hover{
-  color:rgb(204, 204, 204);
+  color:rgb(240, 141, 73);
 }
 
 h1, h2, h3,
