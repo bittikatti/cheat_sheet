@@ -62,6 +62,7 @@ code[class*="language-"],
 pre[class*="language-"] {
     margin: 0 0 !important;
     width: 92%;
+    border-radius: 5px;
 }
 
 /* Example of layout of code block
@@ -117,7 +118,8 @@ pre[class*="language-"] {
     background-color: rgb(45, 45, 45);
     display: flex;
     flex-wrap: wrap;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     justify-content: space-between;
 }
 
