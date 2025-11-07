@@ -1,6 +1,6 @@
 body {
     background-color: rgb(4 28 28);
-    color:rgb(140, 243, 234);
+    color:rgb(126, 198, 153);
     font-family: Arial;
     font-size: 18px;
     line-height: 30px;
@@ -31,7 +31,7 @@ a:active, a:hover{
 h1, h2, h3,
 h4, h5, h6,
 .customHeading {
-    color:rgb(103, 205, 204);
+    color:rgb(126, 198, 153);
     line-height: 1em;
     margin: 0;
 }
