@@ -21,17 +21,17 @@ body {
 }
 
 a{
-  color:rgb(240 164 45);
+  color:rgb(240, 141, 73);
 }
 
 a:active, a:hover{
-  color:rgb(240 243 243);
+  color:rgb(204, 204, 204);
 }
 
 h1, h2, h3,
 h4, h5, h6,
 .customHeading {
-    color:rgb(45, 240, 224);
+    color:rgb(103, 205, 204);
     line-height: 1em;
     margin: 0;
 }
@@ -50,7 +50,7 @@ h4, h5, h6,
 }
 
 .codeBlock {
-    background-color: #272822;
+    background-color: rgb(45, 45, 45);
     border-radius: 5px;
     font-family: monospace;
     display: flex;
@@ -102,7 +102,7 @@ pre[class*="language-"] {
 }
 
 .cmdTopBar {
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(204, 204, 204);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 2em;
@@ -110,11 +110,11 @@ pre[class*="language-"] {
 }
 
 .cmdText {
-    color: white;
+    color: rgb(204, 204, 204);
 }
 
 .cmdBlack {
-    background-color: rgb(20 20 20);
+    background-color: rgb(45, 45, 45);
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
@@ -128,7 +128,7 @@ pre[class*="language-"] {
 
 .copyIcon:hover {
     cursor: pointer;
-    color: white;
+    color: rgb(204, 204, 204);
 }
 
 .customHeading {
