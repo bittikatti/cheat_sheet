@@ -53,8 +53,6 @@ h4, h5, h6,
     background-color: #272822;
     border-radius: 5px;
     font-family: monospace;
-    margin-left:1rem;
-    margin-right:1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -94,8 +92,9 @@ pre[class*="language-"] {
 */
 
 .cmdText {
-    padding: 1rem;
+    padding: 1em;
     max-width: 92%;
+    font-size: 1em;
 }
 
 .cmdBlock {
