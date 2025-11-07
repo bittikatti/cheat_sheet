@@ -95,10 +95,12 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
 
             explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
 
-            if (cheat.Class == "cmdBlock"){
+            if (cheat.Class == "command-line"){
+                // Command line does not use prismjs styling.
                 cheatElement = createCmdBlock(cheat.Cheat);
             } else {
-                cheatElement = createHighlightedCodeBlock(cheat.Cheat);
+                // The programming language should be in the cheat.Class as language-<insert language> for prismjs to style it.
+                cheatElement = createHighlightedCodeBlock(cheat.Cheat, cheat.Class);
             }
 
             cheatBlockElement.append(
@@ -139,12 +141,12 @@ function createTextElement(type, className, value, renderTagsAsHtml=true, replac
     return element;
 }
 
-function createHighlightedCodeBlock(cheat){
+function createHighlightedCodeBlock(cheat, className){
     cheatElement = createTextElement("div", "codeBlock", "");
     // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
     const preElement = document.createElement("pre");
     cheatElement.appendChild(preElement);
-    const codeTextElement = createTextElement("code", "language-python", cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
+    const codeTextElement = createTextElement("code", className, cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
     preElement.appendChild(codeTextElement);
 
     // Add the copy icon

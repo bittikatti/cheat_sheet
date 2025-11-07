@@ -9,7 +9,7 @@
                 {
                     "Explanation" : "Execute when called but not when imported",
                     "Cheat" : "if __name__ == '__main__':\n\tmain()",
-                    "Class" : "codeBlock"
+                    "Class" : "language-python"
                 }
             ]
         },
@@ -20,7 +20,7 @@
                 {
                     "Explanation" : "Open Chrome with specified download folder.",
                     "Cheat" : "from selenium import webdriver\nfrom selenium.webdriver.chrome.service import Service\nfrom webdriver_manager.chrome import ChromeDriverManager\n\noptions = webdriver.ChromeOptions()\noptions.add_experimental_option('prefs', {'download.default_directory' : '\\data\\downloads'})\ndriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)",
-                    "Class" : "codeBlock"
+                    "Class" : "language-python"
                 }
             ]
         }

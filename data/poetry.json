@@ -9,12 +9,12 @@
                 {
                     "Explanation" : "Create virtual environment for python in .venv folder of the local repository.",
                     "Cheat" : "poetry config virtualenvs.in-project true",
-                    "Class" : "cmdBlock"
+                    "Class" : "command-line"
                 },
                 {
                     "Explanation" : "",
                     "Cheat" : "poetry config virtualenvs.path .venv",
-                    "Class" : "cmdBlock"
+                    "Class" : "command-line"
                 }
             ]
         },
@@ -25,17 +25,17 @@
                 {
                     "Explanation" : "Create just the venv using another python version. No dependencies are yet installed.",
                     "Cheat" : "poetry env use '/full/path/to/python.exe'",
-                    "Class" : "cmdBlock"
+                    "Class" : "command-line"
                 },
                 {
                     "Explanation" : "Usually like this:",
                     "Cheat" : "poetry env use 'C:\\Program Files\\Python310'",
-                    "Class" : "cmdBlock"
+                    "Class" : "command-line"
                 },
                 {
                     "Explanation" : "Then like you would normally do:",
                     "Cheat" : "poetry install",
-                    "Class" : "cmdBlock"
+                    "Class" : "command-line"
                 }
             ]
         }
