@@ -78,59 +78,15 @@ pre[class*="language-"] {
 </div>
 */
 
-/* Example of layout of command line block
-<div class="cmdBlock">
-    <div class="cmdTopBar"></div>
-    <div class="cmdBlack">
-        <div class="cmdText">
-            Insert piece of command here
-        </div>
-        <div class="copyIcon">
-            <svg>[svg stuff here]</svg>
-        </div>
-    </div>
-</div>
-*/
-
-.cmdText {
-    padding: 1em;
-    max-width: 92%;
-    font-size: 1em;
-}
-
-.cmdBlock {
-    font-family: monospace;
-}
-
-.cmdTopBar {
-    background-color: rgb(204, 204, 204);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 2em;
-    width: 100%;
-}
-
-.cmdText {
-    color: rgb(204, 204, 204);
-}
-
-.cmdBlack {
-    background-color: rgb(45, 45, 45);
-    display: flex;
-    flex-wrap: wrap;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    justify-content: space-between;
-}
-
 .copyIcon {
     padding: 1rem;
     margin-left: auto;
+    color:rgb(204, 204, 204)
 }
 
 .copyIcon:hover {
     cursor: pointer;
-    color: rgb(204, 204, 204);
+    color: rgb(240, 141, 73);
 }
 
 .customHeading {

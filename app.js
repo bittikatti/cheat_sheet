@@ -95,11 +95,13 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
 
             explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
 
-            if (cheat.Class == "command-line"){
-                // Command line does not use prismjs styling.
-                cheatElement = createCmdBlock(cheat.Cheat);
+            /* Command lines in prismjs are done a bit differently compared to other languages.
+            Thus the command-line thing needs to be done in different function
+            */
+            if ("command-line".indexOf(cheat.Class) !== -1){
+                
+                cheatElement = createCommandLine(cheat.Cheat);
             } else {
-                // The programming language should be in the cheat.Class as language-<insert language> for prismjs to style it.
                 cheatElement = createHighlightedCodeBlock(cheat.Cheat, cheat.Class);
             }
 
@@ -155,31 +157,23 @@ function createHighlightedCodeBlock(cheat, className){
     return cheatElement;
 }
 
-function createCmdBlock(cheat){
-    /**
-    Create a web element that looks like command terminal with white top bar, black terminal and copy button.
-    */
-
+function createCommandLine(cheat){
     // A container for the terminal
-    const cmdBlock = createTextElement("div", "cmdBlock", "");
-
-    // The white top bar
-    const topBarElement = createTextElement("div", "cmdTopBar", "");
-    cmdBlock.appendChild(topBarElement);
-
-    // The black background
-    const cmdBlack = createTextElement("div", "cmdBlack", "");
-    cmdBlock.appendChild(cmdBlack);
+    cheatElement = createTextElement("div", "codeBlock", "");
 
     // The command itself
     // Keep <> tags as is in command line commands as there they are not html.
-    const cmdText = createTextElement("div", "cmdText", cheat, renderTagsAsHtml=false);
-    cmdBlack.appendChild(cmdText);
+    // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
+    const preElement = document.createElement("pre");
+    preElement.className = "command-line language-git"; //"command-line language-bash";
+    //preElement.setAttribute("data-continuation-str", "\\");
+    preElement.innerHTML = String(cheat);
+    cheatElement.appendChild(preElement);
 
-    // copy icon from https://icons.getbootstrap.com/icons/copy/
+    // Add the copy icon
     svgIconContainer = createCopyIconSvg(cheat);
-    cmdBlack.appendChild(svgIconContainer);
-    return cmdBlock;
+    cheatElement.appendChild(svgIconContainer);
+    return cheatElement;
 }
 
 function createCopyIconSvg(cheat){
@@ -187,7 +181,8 @@ function createCopyIconSvg(cheat){
     Copy icon that acts as a button
     Includes event listener to copy the cheat code into clipboard
 
-    The copy icon is from bootstrap. End result is this.
+    The copy icon is from bootstrap. https://icons.getbootstrap.com/icons/copy/
+    End result is this.
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
     </svg>

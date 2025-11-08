@@ -9,17 +9,17 @@
                 {
                     "Explanation" : "If you have python installed, run this in the folder, where index.html and others are located. You may switch the port.",
                     "Cheat" : "python -m http.server 8000",
-                    "Class" : "command-line"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "In browser open the following address",
                     "Cheat" : "http://localhost:8000",
-                    "Class" : "command-line"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Afterwards you can kill the processes in the port you used above.",
                     "Cheat" : "npx kill-port 8000",
-                    "Class" : "command-line"
+                    "Class" : "command-line language-git"
                 }
             ]
         }

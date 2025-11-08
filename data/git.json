@@ -9,17 +9,17 @@
                 {
                     "Explanation" : "Unset user.name and user.email from git globally and locally. Unsets only for the windows user that runs this command and the local repo, where this is run. Does not unset global configs of other windows users in the machine.",
                     "Cheat" : "git config --local --unset user.name\ngit config --local --unset user.email\ngit config --global --unset user.name\ngit config --global --unset user.email",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Set your github user in your windows user globally.",
                     "Cheat" : "git config --global user.name 'MyGitHubUserName'\ngit config --global user.email 'my.email@address.com'",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Edit commit author if you cannot set git config globally. This bypasses even the user config set in --local. Use this when you are not the only one with access to this machine.",
                     "Cheat" : "git commit --author='Author Name <email@address.com>' -m '<Enter a commit message>'",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         },
@@ -30,7 +30,7 @@
                 {
                     "Explanation" : "Latest unpushed commit.",
                     "Cheat" : "git commit --amend -m '<insert the new commit message>'",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         },
@@ -41,17 +41,17 @@
                 {
                     "Explanation" : "Unpushed regular commit, but keep changes",
                     "Cheat" : "git reset --soft HEAD~1",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "(Avoid using this) Unpushed regular commit. Trash the changes.",
                     "Cheat" : "git reset --hard HEAD~1",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Pushed regular commit",
                     "Cheat" : "git revert -- <insert commit id you want to flip>",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         },
@@ -62,12 +62,12 @@
                 {
                     "Explanation" : "Unpushed merge commit. Git reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
                     "Cheat" : "Depends. Not sure.",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Pushed merge commit. Revert is not ctrl+Z but instead it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
                     "Cheat" : "git revert -m 1/2 <insert commit you want to get to in the parent branch>",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         },
@@ -78,12 +78,12 @@
                 {
                     "Explanation" : "Searching for word within any file from history",
                     "Cheat" : "git log -S",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Nice graph of commits (shows branching). Github's Insights > Networking has better UI.",
                     "Cheat" : "git log --all --decorate --graph",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         },
@@ -94,22 +94,22 @@
                 {
                     "Explanation" : "Create a completely new branch",
                     "Cheat" : "git checkout -b <branch name>",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Create a local branch and set it to trace an existing remote branch.",
                     "Cheat" : "git checkout -b <branch name> origin/<branch name>",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Remove local branch. -d needs to be capitalized (-D) if branch was unmerged.",
                     "Cheat" : "git branch -d <branch name>",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 },
                 {
                     "Explanation" : "Remove remote branch tracking. Remember to remove the branch from remote repository too.",
                     "Cheat" : "git branch -rd origin/<branch name>",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         },
@@ -120,7 +120,7 @@
                 {
                     "Explanation" : "You want to merge two branches, both of which includes changes made after split. However, you do not want the end result to have any active changes from one of the branches while both should be visible in commit history. Kind of like moving one branch to trash bin but never fully deleting it. Use 'ours' or 'theirs' to indicate the branch which you want to 'keep active'.",
                     "Cheat" : "git merge -X theirs/ours",
-                    "Class" : "language-git"
+                    "Class" : "command-line language-git"
                 }
             ]
         }
