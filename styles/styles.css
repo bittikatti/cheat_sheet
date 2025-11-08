@@ -47,6 +47,9 @@ h4, h5, h6,
 
 .cheatExplanationBlock{
     padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .codeBlock {
