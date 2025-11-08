@@ -22,7 +22,31 @@ a {
     color: rgb(204, 204, 204);
 }
 
+.container .cheatExplanationBlock a {
+    position: relative; /* must be positioned for z-index to work */
+    z-index: 2;
+}
+
 .collectionStyle {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+img{
+    width: 100%;
+}
+
+.catContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* To keep below the links */
+}
+
+@media (max-width: 600px) {
+    .catContainer {
+        max-width: 90%;
+        position: absolute;
+    }
 }
