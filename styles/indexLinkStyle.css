@@ -3,16 +3,16 @@ a {
 }
 
 /* Alternate colors using nth-child selectors */
-.container .cheatExplanationBlock a:nth-child(1n) {
+.container .cheatExplanationBlock a:nth-child(4n+0) {
     color: rgb(204, 153, 205);
 }
-.container .cheatExplanationBlock a:nth-child(2n) {
+.container .cheatExplanationBlock a:nth-child(4n+1) {
     color: rgb(103, 205, 204);
 }
-.container .cheatExplanationBlock a:nth-child(3n) {
+.container .cheatExplanationBlock a:nth-child(4n+2) {
     color: rgb(240, 141, 73);
 }
-.container .cheatExplanationBlock a:nth-child(4n) {
+.container .cheatExplanationBlock a:nth-child(4n+3) {
     color: rgb(126, 198, 153);
 }
 
