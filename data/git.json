@@ -60,12 +60,12 @@
             "Intro" : "This is most likely is going to take relatively long time to fix correctly. You may also need help with this and/or may need to notify someone (to later revert the reverted merge commit if necessary).",
             "Cheats" : [
                 {
-                    "Explanation" : "Unpushed merge commit. Git reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
-                    "Cheat" : "Depends. Not sure.",
+                    "Explanation" : "Unpushed merge commit.\nGit reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
+                    "Cheat" : "<Depends. Not sure.>",
                     "Class" : "command-line language-git"
                 },
                 {
-                    "Explanation" : "Pushed merge commit. Revert is not ctrl+Z but instead it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, revert the reverted merge before the new merge. Otherwise the commits before the first merge are abandoned.",
+                    "Explanation" : "Pushed merge commit.\nRevert is not ctrl+Z but instead it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, the revert of merge needs to be reverted before the new merge. Otherwise the commits before the first merge remain abandoned.",
                     "Cheat" : "git revert -m 1/2 <insert commit you want to get to in the parent branch>",
                     "Class" : "command-line language-git"
                 }
