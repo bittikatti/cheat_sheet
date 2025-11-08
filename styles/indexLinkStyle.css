@@ -1,0 +1,23 @@
+a {
+    padding-bottom: 1em; 
+}
+
+/* Alternate colors using nth-child selectors */
+.container .cheatExplanationBlock a:nth-child(1n) {
+    color: rgb(204, 153, 205);
+}
+.container .cheatExplanationBlock a:nth-child(2n) {
+    color: rgb(103, 205, 204);
+}
+.container .cheatExplanationBlock a:nth-child(3n) {
+    color: rgb(240, 141, 73);
+}
+.container .cheatExplanationBlock a:nth-child(4n) {
+    color: rgb(126, 198, 153);
+}
+
+/* Hover and active states — always white */
+.container .cheatExplanationBlock a:hover,
+.container .cheatExplanationBlock a:active {
+    color: rgb(204, 204, 204);
+}
