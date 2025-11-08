@@ -21,11 +21,11 @@ body {
 }
 
 a{
-  color:rgb(204, 204, 204);
+  color:rgb(240, 141, 73);
 }
 
 a:active, a:hover{
-  color:rgb(240, 141, 73);
+  color:rgb(204, 204, 204);
 }
 
 h1, h2, h3,
@@ -81,12 +81,12 @@ pre[class*="language-"] {
 .copyIcon {
     padding: 1rem;
     margin-left: auto;
-    color:rgb(204, 204, 204)
+    color:rgb(240, 141, 73);
 }
 
-.copyIcon:hover {
+.copyIcon:hover, .copyIcon:active {
     cursor: pointer;
-    color: rgb(240, 141, 73);
+    color:rgb(204, 204, 204);
 }
 
 .customHeading {
