@@ -94,16 +94,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
             cheatBlockElement.className = "cheatBlock";
 
             explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
-
-            /* Command lines in prismjs are done a bit differently compared to other languages.
-            Thus the command-line thing needs to be done in different function
-            */
-            if ("command-line".indexOf(cheat.Class) !== -1){
-                
-                cheatElement = createCommandLine(cheat.Cheat);
-            } else {
-                cheatElement = createHighlightedCodeBlock(cheat.Cheat, cheat.Class);
-            }
+            cheatElement = createCodeBlock(cheat.Cheat, cheat.Class);
 
             cheatBlockElement.append(
                 explanationElement,
@@ -143,32 +134,25 @@ function createTextElement(type, className, value, renderTagsAsHtml=true, replac
     return element;
 }
 
-function createHighlightedCodeBlock(cheat, className){
-    cheatElement = createTextElement("div", "codeBlock", "");
-    // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
-    const preElement = document.createElement("pre");
-    cheatElement.appendChild(preElement);
-    const codeTextElement = createTextElement("code", className, cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
-    preElement.appendChild(codeTextElement);
-
-    // Add the copy icon
-    svgIconContainer = createCopyIconSvg(cheat);
-    cheatElement.appendChild(svgIconContainer);
-    return cheatElement;
-}
-
-function createCommandLine(cheat){
-    // A container for the terminal
+function createCodeBlock(cheat, className){
+    // A container for the code
     cheatElement = createTextElement("div", "codeBlock", "");
 
-    // The command itself
-    // Keep <> tags as is in command line commands as there they are not html.
-    // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
+    // Prismjs requires pre element
     const preElement = document.createElement("pre");
-    preElement.className = "command-line language-git"; //"command-line language-bash";
-    //preElement.setAttribute("data-continuation-str", "\\");
-    preElement.innerHTML = String(cheat);
     cheatElement.appendChild(preElement);
+
+    /* Command lines in prismjs are done into the <pre> element
+    Code languages are done into <code> elements inside pre elements.
+    */
+    if ("command-line".indexOf(className) !== -1){
+        preElement.className = className;
+        preElement.innerHTML = String(cheat);
+    } else {
+        // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
+        const codeTextElement = createTextElement("code", className, cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
+        preElement.appendChild(codeTextElement);
+    }
 
     // Add the copy icon
     svgIconContainer = createCopyIconSvg(cheat);
