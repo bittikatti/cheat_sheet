@@ -9,6 +9,14 @@
         {
             "Caption" : "Cat roll",
             "Path" : "catRoll.png"
+        },
+        {
+            "Caption" : "The more the merrier",
+            "Path" : "moreTheMerrier.png"
+        },
+        {
+            "Caption" : "Mid lick",
+            "Path" : "midLick.png"
         }
     ]
 }
