@@ -17,6 +17,10 @@
         {
             "Caption" : "Mid lick",
             "Path" : "midLick.png"
+        },
+        {
+            "Caption" : "Ferocious Beast",
+            "Path" : "ferociousBeast.png"
         }
     ]
 }
