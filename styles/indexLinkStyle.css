@@ -21,3 +21,8 @@ a {
 .container .cheatExplanationBlock a:active {
     color: rgb(204, 204, 204);
 }
+
+.collectionStyle {
+    display: flex;
+    justify-content: space-between;
+}
