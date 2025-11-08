@@ -73,7 +73,7 @@
         },
         {
             "Subtitle" : "Git log commands",
-            "Intro" : "Self explanatory subtitle",
+            "Intro" : "",
             "Cheats" : [
                 {
                     "Explanation" : "Searching for word within any file from history",

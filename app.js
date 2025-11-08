@@ -84,9 +84,11 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     // Add Subtitle and short intro under that
     subtitleElement = createTextElement("h2", "cheatBlock", content.Subtitle);
     subList.appendChild(subtitleElement);
-    introElement = createTextElement("div", "cheatBlock", content.Intro);
-    subList.appendChild(introElement);
-    
+    // If Intro is given:
+    if (String(content.Intro).length > 0) {
+        introElement = createTextElement("div", "cheatBlock", content.Intro);
+        subList.appendChild(introElement);
+    }
     if ("Cheats" in content) {
         // Add commands with their short explanations
         for (const cheat of content.Cheats) {
