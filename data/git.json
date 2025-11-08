@@ -57,7 +57,7 @@
         },
         {
             "Subtitle" : "Merge commit went sideways",
-            "Intro" : "This is most likely is going to take relatively long time to fix correctly. You may also need help with this and/or may need to notify someone (to later revert the reverted merge commit if necessary).",
+            "Intro" : "This is most likely is going to take relatively long time to fix correctly. In case multiple people work simultaneously on the same project, you may need to notify someone (to later revert the reverted merge commit if necessary).",
             "Cheats" : [
                 {
                     "Explanation" : "Unpushed merge commit.\nGit reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
