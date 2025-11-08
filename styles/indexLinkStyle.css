@@ -24,13 +24,13 @@ a {
 
 .container .cheatExplanationBlock a {
     position: relative; /* must be positioned for z-index to work */
-    z-index: 2;
+    z-index: 2; /* z-index 2 links go over z-index 1 cat */
 }
 
+/* To flex align the cat and the links in index.html*/
 .collectionStyle {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 img{
@@ -40,12 +40,14 @@ img{
 .catContainer {
     max-width: 400px;
     margin: 0 auto;
-    position: relative;
+    position: relative; /* For z-index */
     z-index: 1; /* To keep below the links */
 }
 
 @media (max-width: 600px) {
     .catContainer {
+        /* Force cat to that position in mobile.
+        z-index takes care of the rest to lay the links on top of the cat*/
         max-width: 90%;
         position: absolute;
     }
