@@ -5,6 +5,10 @@
         {
             "Caption" : "Cat sitting",
             "Path" : "catSitting.png"
+        },
+        {
+            "Caption" : "Cat roll",
+            "Path" : "catRoll.png"
         }
     ]
 }
