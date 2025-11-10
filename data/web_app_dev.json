@@ -13,7 +13,7 @@
                 },
                 {
                     "Explanation": "Or with npm live-server when having js as type='module'",
-                    "Cheat": "live-server --port=800",
+                    "Cheat": "live-server --port=8000",
                     "Class" : "command-line language-git"
                 },
                 {
