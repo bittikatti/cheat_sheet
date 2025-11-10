@@ -1,0 +1,28 @@
+{
+    "Heading1" : "CSS",
+    "Contents" :
+    [
+        {
+            "Subtitle" : "Heading numbering",
+            "Intro" : "This is used in this site.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Three (3) level heading numbering with the format X.X.X",
+                    "Cheat" : "body {\n\tcounter-reset: level1Header level2Header level3Header;\n}\n\nh1 {\n\tcounter-increment: level1Header;\n\tcounter-set: level2Header 0;\n}\nh1::before {\n\tcontent: counter(level1Header) ' ';\n}\n\nh2{\n\tcounter-increment: level2Header;\n\tcounter-set: level3Header 0\n}\nh2::before {\n\tcontent: counter(level1Header) '.' counter(level2Header) ' ';\n}\n\nh3 {\n\tcounter-increment: level3Header;\n}\nh3::before {\n\tcontent: counter(level1Header) '.' counter(level2Header) '.' counter(level3Header) ' ';\n}",
+                    "Class" : "language-css"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Alternate styling by every nth",
+            "Intro" : "This is used in this site's index.html.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Change the color of links every 4th link",
+                    "Cheat" : "/* Alternate colors using nth-child selectors */\n.container .cheatExplanationBlock a:nth-child(4n+0) {\n\tcolor: rgb(204, 153, 205);\n}\n.container .cheatExplanationBlock a:nth-child(4n+1) {\n\tcolor: rgb(103, 205, 204);\n}\n.container .cheatExplanationBlock a:nth-child(4n+2) {\n\tcolor: rgb(240, 141, 73);\n}\n.container .cheatExplanationBlock a:nth-child(4n+3) {\n\tcolor: rgb(126, 198, 153);\n}",
+                    "Class" : "language-css"
+                }
+            ]
+        }
+    ]
+}
