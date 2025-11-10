@@ -8,7 +8,7 @@
             "Cheats" : [
                 {
                     "Explanation" : "Creating copy to clipboard button in the javascript side.",
-                    "Cheat" : "function createCopyButton(textToCopy){\n\tconst container = document.createElement('div');\n\tcontainer.className = 'copyIcon';\n\t\\\\ Probably want to add some icon here\n\tcontainer.addEventListener('click', ()=>{\n\t\tcopy(textToCopy);\n\t});\n\treturn container;\n}\n\nfunction copy(textToCopy){\n\tnavigator.clipboard.writeText(textToCopy);\n}",
+                    "Cheat" : "function createCopyButton(textToCopy){\n\tconst container = document.createElement('div');\n\tcontainer.className = 'copyIcon';\n\t// Probably want to add some icon here\n\tcontainer.addEventListener('click', ()=>{\n\t\tcopy(textToCopy);\n\t});\n\treturn container;\n}\n\nfunction copy(textToCopy){\n\tnavigator.clipboard.writeText(textToCopy);\n}",
                     "Class" : "language-javascript"
                 }
             ]
