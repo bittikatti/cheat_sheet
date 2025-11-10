@@ -96,12 +96,11 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
             cheatBlockElement.className = "cheatBlock";
 
             explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
-            cheatElement = createCodeBlock(cheat.Cheat, cheat.Class);
-
-            cheatBlockElement.append(
-                explanationElement,
-                cheatElement
-            );
+            cheatBlockElement.appendChild(explanationElement)
+            if (String(cheat.Cheat).length > 0) {
+                cheatElement = createCodeBlock(cheat.Cheat, cheat.Class);
+                cheatBlockElement.appendChild(cheatElement);
+            }
             subList.appendChild(cheatBlockElement);
         }
     }

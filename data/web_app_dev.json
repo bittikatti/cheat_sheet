@@ -12,14 +12,19 @@
                     "Class" : "command-line language-git"
                 },
                 {
+                    "Explanation": "Or with npm live-server when having js as type='module'",
+                    "Cheat": "live-server --port=800",
+                    "Class" : "command-line language-git"
+                },
+                {
                     "Explanation" : "In browser open the following address",
                     "Cheat" : "http://localhost:8000",
                     "Class" : "command-line language-git"
                 },
                 {
-                    "Explanation" : "Afterwards you can kill the processes in the port you used above.",
-                    "Cheat" : "npx kill-port 8000",
-                    "Class" : "command-line language-git"
+                    "Explanation" : "Close by Ctrl+C. To properly remove all before next host session, you need to remove cached images and files as well as hosted app data.",
+                    "Cheat" : "",
+                    "Class" : ""
                 }
             ]
         }
