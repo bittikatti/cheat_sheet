@@ -1,13 +1,13 @@
 {
-    "Heading1" : "Python",
+    "Heading1" : "Javascript",
     "Contents" :
     [
         {
-            "Subtitle" : "Basics",
-            "Intro" : "Start",
+            "Subtitle" : "Copy to clipboard",
+            "Intro" : "",
             "Cheats" : [
                 {
-                    "Explanation" : "Execute when called but not when imported",
+                    "Explanation" : "Creating copy to clipboard button in the javascript side.",
                     "Cheat" : "function createCopyButton(textToCopy){\n\tconst container = document.createElement('div');\n\tcontainer.className = 'copyIcon';\n\t\\\\ Probably want to add some icon here\n\tcontainer.addEventListener('click', ()=>{\n\t\tcopy(textToCopy);\n\t});\n\treturn container;\n}\n\nfunction copy(textToCopy){\n\tnavigator.clipboard.writeText(textToCopy);\n}",
                     "Class" : "language-javascript"
                 }
