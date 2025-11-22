@@ -16,7 +16,7 @@ readJSON(`data/cat.json`);
 
 function readJSON(dataJson, topLevelContentIndex){
     // Create container for one json data
-    const newList = document.createElement("class");
+    const newList = document.createElement("div");
     newList.className = "cheatCodeCollection";
     newList.id = `topLevelCheatCodeCollection${topLevelContentIndex}`;
 

@@ -3,7 +3,7 @@ var document;
 // Create web elements for each git data json file
 const mainContent = document.createElement("div");
 mainContent.className = "container mainStyle";
-mainContent.id = `main`;
+mainContent.id = "main";
 
 document.body.appendChild(mainContent);
 
@@ -28,7 +28,7 @@ function getCheatCodeList(name, url) {
 
 function readJSON(dataJson, topLevelContentIndex){
     // Create container for one json data
-    const newList = document.createElement("class");
+    const newList = document.createElement("div");
     newList.className = "cheatCodeCollection";
     newList.id = `topLevelCheatCodeCollection${topLevelContentIndex}`;
 
