@@ -1,3 +1,5 @@
+import { createTextElement } from './utils.js';
+
 // Create web elements for each git data json file
 const mainContent = document.createElement("div");
 mainContent.className = "container mainStyle";
@@ -76,14 +78,4 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     imageElement.alt = content.Path;
     newList.appendChild(imageElement);
     return;
-}
-
-function createTextElement(type, className, value){
-    /**
-    Creates a text element with given value
-    */
-    const element = document.createElement(type); // Would like this to be a explanation element type
-    element.className = className;
-    element.innerHTML = String(value);
-    return element;
 }
