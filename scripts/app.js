@@ -103,10 +103,27 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
             }
             subList.appendChild(cheatBlockElement);
         }
+    } else if ( "Links" in content ) {
+        for (const link of content.Links) {
+            const linkListElement = document.createElement("div");
+            linkListElement.className = "cheatBlock";
+            const linkElement = createLinkList(link);
+            linkListElement.appendChild(linkElement);
+            subList.appendChild(linkListElement);
+        }
     }
     
     newList.appendChild(subList);
     return;
+}
+
+function createLinkList(link) {
+    /* Create element with a href links inside */
+    const linkElement = document.createElement("a");
+    linkElement.href = link.Link;
+    linkElement.innerHTML = link.Explanation;
+    linkElement.alt = link.Alt;
+    return linkElement;
 }
 
 function createCodeBlock(cheat, className){
