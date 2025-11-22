@@ -1,5 +1,3 @@
-var document;
-
 // Create web elements for each git data json file
 const mainContent = document.createElement("div");
 mainContent.className = "container mainStyle";
@@ -50,7 +48,7 @@ function readJSON(dataJson, topLevelContentIndex){
         setTimeout(
             () => {
                 // Create one top level title for this json
-                subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
+                var subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
                 newList.appendChild(subtitleElement);
                 
                 for (var content of data.Contents){
@@ -82,11 +80,11 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     subList.id = `cheatCodeCollection${subLevelContentIndex}`;
 
     // Add Subtitle and short intro under that
-    subtitleElement = createTextElement("h2", "cheatBlock", content.Subtitle);
+    const subtitleElement = createTextElement("h2", "cheatBlock", content.Subtitle);
     subList.appendChild(subtitleElement);
     // If Intro is given:
     if (String(content.Intro).length > 0) {
-        introElement = createTextElement("div", "cheatBlock", content.Intro);
+        const introElement = createTextElement("div", "cheatBlock", content.Intro);
         subList.appendChild(introElement);
     }
     if ("Cheats" in content) {
@@ -95,10 +93,10 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
             const cheatBlockElement = document.createElement("div");
             cheatBlockElement.className = "cheatBlock";
 
-            explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
+            var explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
             cheatBlockElement.appendChild(explanationElement)
             if (String(cheat.Cheat).length > 0) {
-                cheatElement = createCodeBlock(cheat.Cheat, cheat.Class);
+                var cheatElement = createCodeBlock(cheat.Cheat, cheat.Class);
                 cheatBlockElement.appendChild(cheatElement);
             }
             subList.appendChild(cheatBlockElement);
@@ -137,7 +135,7 @@ function createTextElement(type, className, value, renderTagsAsHtml=true, replac
 
 function createCodeBlock(cheat, className){
     // A container for the code
-    cheatElement = createTextElement("div", "codeBlock", "");
+    const cheatElement = createTextElement("div", "codeBlock", "");
 
     // Prismjs requires pre element
     const preElement = document.createElement("pre");
@@ -151,12 +149,12 @@ function createCodeBlock(cheat, className){
         preElement.innerHTML = String(cheat);
     } else {
         // When using prism, the code syntax highlighting takes place if <pre><code class="language-[the language]">insert code here</code></pre>
-        const codeTextElement = createTextElement("code", className, cheat, renderTagsAsHtml=false, replaceJsonFormatWithHtml=false);
+        const codeTextElement = createTextElement("code", className, cheat, false, false);
         preElement.appendChild(codeTextElement);
     }
 
     // Add the copy icon
-    svgIconContainer = createCopyIconSvg(cheat);
+    const svgIconContainer = createCopyIconSvg(cheat);
     cheatElement.appendChild(svgIconContainer);
     return cheatElement;
 }

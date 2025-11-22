@@ -1,5 +1,3 @@
-var document;
-
 // Create web elements for each git data json file
 const mainContent = document.createElement("div");
 mainContent.className = "container mainStyle";
@@ -37,7 +35,7 @@ function readJSON(dataJson, topLevelContentIndex){
         setTimeout(
             () => {
                 // Create one top level title for this json
-                subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
+                const subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
                 newList.appendChild(subtitleElement);
                 
                 for (var content of data.Contents){
@@ -67,7 +65,7 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
     subList.id = `cheatCodeCollection${subLevelContentIndex}`;
 
     // Add Subtitle
-    subtitleElement = createTextElement("h2", "cheatBlock", content.Caption);
+    const subtitleElement = createTextElement("h2", "cheatBlock", content.Caption);
     subList.appendChild(subtitleElement);
     newList.appendChild(subList);
 
