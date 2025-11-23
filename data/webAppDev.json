@@ -27,17 +27,6 @@
                     "Class" : ""
                 }
             ]
-        },
-        {
-            "Subtitle" : "WCAG 2.1 (Accessibility) compliancy",
-            "Intro" : "Some source material on how to implement things in web applications and complying an accessibility (WCAG 2.1) standard.",
-            "Links": [
-                {
-                    "Explanation" : "How to implement dynamically updating html regions",
-                    "Link": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions",
-                    "Alt": "How to implement dynamically updating html regions"
-                }
-            ]
         }
     ]
 }
