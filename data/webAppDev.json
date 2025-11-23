@@ -38,6 +38,17 @@
                     "Alt": "How to implement dynamically updating html regions"
                 }
             ]
+        },
+        {
+            "Subtitle" : "Short snippets to comply with WCAG 2.1",
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "Declare language for screen reader.",
+                    "Cheat" : "<html lang='en-US'>\n\t/* Rest of the html here */\n</html>",
+                    "Class" : "language-html"
+                }
+            ]
         }
     ]
 }
