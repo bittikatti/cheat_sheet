@@ -19,7 +19,7 @@
             "Cheats" : [
                 {
                     "Explanation" : "Assuming the following directory:",
-                    "Cheat" : "└─┬projectFolder\n  | index.html // Imports javascriptModule1.js as module\n  └scripts/\n   | javascriptModule1.js // Imports a function from javascriptModule2.js\n   | javascriptModule2.js",
+                    "Cheat" : "└─┬projectFolder/\n  | index.html // Imports javascriptModule1.js as module\n  └scripts/\n   | javascriptModule1.js // Imports a function from javascriptModule2.js\n   | javascriptModule2.js",
                     "Class" : "language-bash",
                     "EnableCopy" : false
                 },
