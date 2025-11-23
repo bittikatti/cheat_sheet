@@ -9,12 +9,14 @@
                 {
                     "Explanation" : "",
                     "Cheat" : "",
-                    "Class" : "<Code editor style (codeBlock) or command line style (command-line language-git)>"
+                    "Class" : "<Code editor style (codeBlock) or command line style (command-line language-git)>",
+                    "EnableCopy" : "<Leave out or set as true if the cheat should be copyable. Otherwise set to false.>"
                 },
                 {
                     "Explanation" : "",
                     "Cheat" : "",
-                    "Class" : ""
+                    "Class" : "",
+                    "EnableCopy" : true
                 }
             ]
         }

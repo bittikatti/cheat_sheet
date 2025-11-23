@@ -98,7 +98,12 @@ function populateFromContentDict(newList, content, subLevelContentIndex){
             var explanationElement = createTextElement("div", "cheatExplanationBlock", cheat.Explanation);
             cheatBlockElement.appendChild(explanationElement)
             if (String(cheat.Cheat).length > 0) {
-                var cheatElement = createCodeBlock(cheat.Cheat, cheat.Class);
+                var enableCopyIcon = true;
+                if ( "EnableCopy" in cheat && cheat.EnableCopy == false ){
+                    console.log("EnableCopy is false");
+                    enableCopyIcon = false;
+                }
+                var cheatElement = createCodeBlock(cheat.Cheat, cheat.Class, enableCopyIcon);
                 cheatBlockElement.appendChild(cheatElement);
             }
             subList.appendChild(cheatBlockElement);
@@ -126,7 +131,7 @@ function createLinkList(link) {
     return linkElement;
 }
 
-function createCodeBlock(cheat, className){
+function createCodeBlock(cheat, className, enableCopyIcon){
     // A container for the code
     const cheatElement = createTextElement("div", "codeBlock", "");
 
@@ -147,8 +152,10 @@ function createCodeBlock(cheat, className){
     }
 
     // Add the copy icon
-    const svgIconContainer = createCopyIconSvg(cheat);
-    cheatElement.appendChild(svgIconContainer);
+    if ( enableCopyIcon == true ){
+        const svgIconContainer = createCopyIconSvg(cheat);
+        cheatElement.appendChild(svgIconContainer);
+    }
     return cheatElement;
 }
 

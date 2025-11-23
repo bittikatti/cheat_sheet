@@ -12,6 +12,38 @@
                     "Class" : "language-javascript"
                 }
             ]
+        },
+        {
+            "Subtitle" : "Import your javascript functions in an web app",
+            "Intro" : "To be able to export functions from other javascript files, the javascript needs to be imported as a module in the html file.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Assuming the following directory:",
+                    "Cheat" : "└─┬projectFolder\n  | index.html // Imports javascriptModule1.js as module\n  └scripts/\n   | javascriptModule1.js // Imports a function from javascriptModule2.js\n   | javascriptModule2.js",
+                    "Class" : "language-bash",
+                    "EnableCopy" : false
+                },
+                {
+                    "Explanation" : "In the html import as module:",
+                    "Cheat" : "<script type='module' src='scripts/javascriptModule1.js'></script>",
+                    "Class" : "language-html"
+                },
+                {
+                    "Explanation" : "Javascript module 2 that is to be imported in a javascript module 1:",
+                    "Cheat" : "export function functionToImport() {\n\tconsole.log('Javascript module 2 imported.');\n\treturn;\n}",
+                    "Class" : "language-javascript"
+                },
+                {
+                    "Explanation" : "Import the above function 'functionToImport' in javascript module 2:",
+                    "Cheat" : "import { functionToImport } from './javascriptModule2.js';\n\nfunctionToImport();",
+                    "Class" : "language-javascript"
+                },
+                {
+                    "Explanation" : "Other things to consider while importing javascript as a module: <ol><li>The <strong>const/let/var</strong> declarations are enforced and js will not execute without proper declarations.</li><li>Remove <strong>var document;</strong> declarations from js files.</li></ol>",
+                    "Cheat" : "",
+                    "Class" : ""
+                }
+            ]
         }
     ]
 }
