@@ -47,6 +47,11 @@
                     "Explanation" : "Declare language for screen reader.",
                     "Cheat" : "<html lang='en-US'>\n\t/* Rest of the html here */\n</html>",
                     "Class" : "language-html"
+                },
+                {
+                    "Explanation" : "Escape input field on Enter keypress.",
+                    "Cheat" : "function createInputField(){\n\tconst inputElement = document.createElement('input');\n\n\t// Accessibility requirement: Must be able to exit with enter or return key.\n\tinputElement.addEventListener( 'keypress', function(event) {\n\t\tif ( event.key === 'Enter' ) {\n\t\t\tinputElement.blur(); // Cursor is freed from the field\n\t\t}\n\t});\n\n\tinputElement.addEventListener('change', function (evt) {\n\t\t// What ever your app is supposed to do when input field value changes\n\t});\n}",
+                    "Class" : "language-javascript"
                 }
             ]
         }
