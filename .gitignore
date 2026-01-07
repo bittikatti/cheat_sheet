@@ -1,0 +1,16 @@
+# Everything except specified
+*
+
+!.gitignore
+!*.md
+
+# html
+!*.css
+!*.html
+!*.js
+!*.json
+!*.png
+!*.xcf
+
+!data/
+!data/*
