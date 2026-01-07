@@ -1,0 +1,44 @@
+{
+    "Heading1" : "Pytest & Conftest",
+    "Contents" :
+    [
+        {
+            "Subtitle" : "Start pytest",
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "Show prints and info level logging",
+                    "Cheat" : "pytest -s --log-cli-level=INFO tests/test_module.py::test_function",
+                    "Class" : "language-git"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Pytest",
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "Parameterize test function  without rewriting much more test code",
+                    "Cheat" : "import pytest\n\n@pytest.mark.parametrize('a, b, expected', [\n\t(1, 2, 3),\n\t(2, 3, 5),\n\t(1, 1, 3), # Will cause failed status\n])\ndef test_function(a, b, expected):\n\t'''Check that a + b equals expected result'''\n\tassert a + b == expected",
+                    "Class" : "language-python"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Conftest fixtures",
+            "Intro" : "To avoid rewriting e.g. initializing some things for each test case, these things can be turned into pytest fixtures.",
+            "Cheats" : [
+                {
+                    "Explanation" : "First create fixture in conftest.py",
+                    "Cheat" : "import pytest\nfrom target_system import TargetSystem # Mock for showing how to use fixtures\n\n@pytest.fixture(scope='function') # New instance of this fixture is created between each test function.\ndef system_connection():\n\t'''Open connection to the target system in test environment'''\n\ttarget = TargetSystem(env='test')\n\ttarget.authenticate()\n\t# If external process is opened, prefer 'yield' instead of 'return'\n\t# This enables to closing the external process after test.\n\tyield target\n\ttarget.quit() # To free memory resources for next test functions.",
+                    "Class" : "language-python"
+                },
+                {
+                    "Explanation" : "Then call the fixture from the test function that needs it",
+                    "Cheat" : "def test_order_product(system_connection):\n\t'''Order 2 apples'''\n\tverification = system_connection.order(product='apple', quantity=2)\n\tassert verification == True, 'Unable to execute the test order'",
+                    "Class" : "language-python"
+                }
+            ]
+        }
+    ]
+}
