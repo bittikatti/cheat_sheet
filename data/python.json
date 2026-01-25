@@ -67,7 +67,7 @@
             "Cheats" : [
                 {
                     "Explanation" : "When the page is refreshed, ensure the previous element is stale/non-existent before continuing",
-                    "Cheat" : "",
+                    "Cheat" : "# Find one element before refresh.\nelement = WebDriverWait(driver, 30).until(\n    EC.visibility_of_element_located((By.XPATH, \"//a\"))\n)\ndriver.refresh()\n# The site is refreshed after the previously located element becomes stale\nassert WebDriverWait(driver, 30).until(\n    EC.staleness_of(element)\n) == True",
                     "Class" : "language-python"
                 }
             ]
