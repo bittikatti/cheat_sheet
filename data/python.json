@@ -52,11 +52,11 @@
         },
         {
             "Subtitle" : "Wait for text of element to be certain thing",
-            "Intro" : "Even though a web element is found",
+            "Intro" : "Even though a web element is found sometimes the text inside it may appear bit later. If the look up should happen based on the text too, it may be a good idea to include the text in the look up instead of assuming that an nth element would contain the correct data.",
             "Cheats" : [
                 {
                     "Explanation" : "",
-                    "Cheat" : "# Wait that link contains \"Git\":\ngit_text_in_element = WebDriverWait(driver, 30).until(\n    EC.text_to_be_present_in_element((By.XPATH, \"//a\"), \"Git\")\n)",
+                    "Cheat" : "# XPATH with text value\nWebDriverWait(driver, 30).until(\n    EC.visibility_of_element_located((By.XPATH, \"//a[text()='Git']\"))",
                     "Class" : "language-python"
                 }
             ]
