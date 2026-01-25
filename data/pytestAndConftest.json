@@ -4,6 +4,7 @@
     [
         {
             "Subtitle" : "Start pytest",
+            "HeadingLevel" : 2,
             "Intro" : "",
             "Cheats" : [
                 {
@@ -15,6 +16,7 @@
         },
         {
             "Subtitle" : "Pytest",
+            "HeadingLevel" : 2,
             "Intro" : "",
             "Cheats" : [
                 {
@@ -26,6 +28,7 @@
         },
         {
             "Subtitle" : "Conftest fixtures",
+            "HeadingLevel" : 2,
             "Intro" : "To avoid rewriting e.g. initializing some things for each test case, these things can be turned into pytest fixtures.",
             "Cheats" : [
                 {

@@ -1,5 +1,5 @@
 body {
-	counter-reset: level1Header level2Header level3Header;
+	counter-reset: level1Header level2Header level3Header level4Header level5Header;
 }
 
 h1 {
@@ -20,7 +20,23 @@ h2::before {
 
 h3 {
 	counter-increment: level3Header;
+	counter-set: level4Header 0
 }
 h3::before {
 	content: counter(level1Header) '.' counter(level2Header) '.' counter(level3Header) ' ';
+}
+
+h4 {
+	counter-increment: level4Header;
+	counter-set: level5Header 0
+}
+h4::before {
+	content: counter(level1Header) '.' counter(level2Header) '.' counter(level3Header) '.' counter(level4Header) ' ';
+}
+
+h5 {
+	counter-increment: level5Header;
+}
+h5::before {
+	content: counter(level1Header) '.' counter(level2Header) '.' counter(level3Header) '.' counter(level4Header) '.' counter(level5Header) ' ';
 }

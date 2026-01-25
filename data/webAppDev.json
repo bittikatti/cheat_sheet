@@ -4,6 +4,7 @@
     [
         {
             "Subtitle" : "Host locally",
+            "HeadingLevel" : 2,
             "Intro" : "Javascript 'fetch()' cannot access local files due to security settings. To see how code works while developing, it is possible to host locally.",
             "Cheats" : [
                 {

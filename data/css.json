@@ -4,6 +4,7 @@
     [
         {
             "Subtitle" : "Heading numbering",
+            "HeadingLevel" : 2,
             "Intro" : "This is used in this site.",
             "Cheats" : [
                 {
@@ -15,6 +16,7 @@
         },
         {
             "Subtitle" : "Alternate styling by every nth",
+            "HeadingLevel" : 2,
             "Intro" : "This is used in this site's index.html.",
             "Cheats" : [
                 {
