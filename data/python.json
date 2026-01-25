@@ -26,7 +26,7 @@
         },
         {
             "Subtitle" : "Selenium & Race conditions",
-            "Intro" : "What a race condition is?\n\nIn short a race condition is a situation where a process B is started even though a process A is not ready while B expects that A should have been ready first. Starting the process B too early is possible, if the process A indicates readiness incorrectly or the process B does not correctly detect the state of A. In turn starting B too early results in unexpected behavior if error handling does not catch it.\n\nSo how could this ever happen with web scraping? Well, basically in any dynamic web app, the process A is browser loading the html and process B is the dynamic app carrying any requests from the browser to the backend and returning the response back to the browser. The status of the html may be complete even if the dynamic process (B) is still being carried out.\n\nWhen a web app is being web scraped, the scraping introduces a process C into the mix. Ideally the process A and B should both be executed before starting or continuing with the process C, but there is no standard to announce to the browser that the process B was completed. Selenium is only able to trust the html status as that is standard and thus selenium starts/continues its process when the process A is complete even though B may not be. From scraping point of view, user friendly or accessibility compliant apps are easier in this regard, as they should inform the user or their readers about these things. If the app lacks usability and accessibility, the app may still declare the completion of the process B in a way that could be detected using javascript shenanigans with selenium, but that may take more time and effort than what it may be worth only to find out later, that they changed it.\n\nThe easiest way to better overcome race conditions is to introduce WebDriverWait as that gives the process B some time to load the searched web element. However, WebDriverWait is not perfect in all cases as the process B may still be carried out even if one or some of the web elements produced by it were found. Additional waiting, looping and check ups may further improve handling race conditions - keeping in mind that nothing is ever bulletproof.\n\n"
+            "Intro" : "What a race condition is?\n\nIn short a race condition is a situation where a process B is started even though a process A was not ready or it is multithreaded or for some other reason a process B is started too early. In turn starting B too early results in unexpected behavior if error handling does not catch it.\n\nSo how could this ever happen with web scraping? Well, basically A is the web app being scraped while B is the scraper. Ideally A should be done before B. Selenium continues if the html status is ready, but the status may be ready even though the app may still be executing some queries that would append new web elements to the html. Selenium does not automatically see or detect if the app is still processing some dynamic processes, thus B may start too early.\n\nFrom scraping point of view, user friendly or accessibility compliant apps are may be easier, as they should inform the user or their readers about these things. Furthermore the app may still declare the completion of the dynamic process of the web app in a way that could be detected using javascript shenanigans with selenium, but that may take more time and effort than what it may be worth only to find out later, that they changed it.\n\nThe easiest way to better overcome race conditions is to introduce WebDriverWait as that gives the web app some time to load the searched web element. However, WebDriverWait is not perfect in all cases, which then may lead to web scraping process being carried out too early. Additional waiting, looping and check ups may further improve handling race conditions - keeping in mind that nothing is ever bulletproof.\n\n"
         },
         {
             "Subtitle" : "Switching browser tabs",
@@ -49,7 +49,28 @@
                     "Class" : "language-python"
                 }
             ]
-
+        },
+        {
+            "Subtitle" : "Wait for text of element to be certain thing",
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "",
+                    "Cheat" : "",
+                    "Class" : "language-python"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Refresh()",
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "When the page is refreshed, ensure the previous element is stale/non-existent before continuing",
+                    "Cheat" : "",
+                    "Class" : "language-python"
+                }
+            ]
         }
         
     ]
