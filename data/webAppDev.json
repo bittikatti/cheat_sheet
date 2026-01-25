@@ -1,10 +1,10 @@
 {
-    "Heading1" : "Web app development",
+    "PageTitle" : "Web app development",
     "Contents" :
     [
         {
             "Subtitle" : "Host locally",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "Javascript 'fetch()' cannot access local files due to security settings. To see how code works while developing, it is possible to host locally.",
             "Cheats" : [
                 {

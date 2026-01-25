@@ -1,10 +1,10 @@
 {
-    "Heading1" : "Clean git history",
+    "PageTitle" : "Clean git history",
     "Contents" :
     [
         {
             "Subtitle" : "BFG",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "<a href='https://rtyley.github.io/bfg-repo-cleaner/' alt='BFG Repo-cleaner'>BFG Repo-cleaner</a> is simpler than 'git--filter--branch' and enables cleaning bigger commits. BFG does work on smaller commits too. Furthermore, while cleaning small commits or repositories, '--mirror' flag is not necessary and cleaning can be done directly inside the locally cloned repository."
         }
     ]

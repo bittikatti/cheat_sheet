@@ -1,10 +1,10 @@
 {
-    "Heading1" : "Git",
+    "PageTitle" : "Git",
     "Contents" :
     [
         {
             "Subtitle" : "Git user configs",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "When you regularly do work on computers that other users use.",
             "Cheats" : [
                 {
@@ -26,7 +26,7 @@
         },
         {
             "Subtitle" : "Edit commit message",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "Small edits to commit messages. Amending the commit message changes the commit sha, thus amending pushed commits of branches edited simultaneously by multiple people will cause 'unrelated histories' merge conflicts.",
             "Cheats" : [
                 {
@@ -38,7 +38,7 @@
         },
         {
             "Subtitle" : "'Undo' bad commits",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
             "Cheats" : [
                 {
@@ -60,7 +60,7 @@
         },
         {
             "Subtitle" : "Merge commit went sideways",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "This is most likely is going to take relatively long time to fix correctly. In case multiple people work simultaneously on the same project, you may need to notify someone (to later revert the reverted merge commit if necessary).",
             "Cheats" : [
                 {
@@ -78,7 +78,7 @@
         },
         {
             "Subtitle" : "Git log commands",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "",
             "Cheats" : [
                 {
@@ -95,7 +95,7 @@
         },
         {
             "Subtitle" : "Git branches",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "Create and delete branches",
             "Cheats" : [
                 {
@@ -122,7 +122,7 @@
         },
         {
             "Subtitle" : "Merge",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "Merge branches",
             "Cheats" : [
                 {

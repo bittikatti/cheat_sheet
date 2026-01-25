@@ -50,7 +50,7 @@ function readJSON(dataJson, topLevelContentIndex){
         setTimeout(
             () => {
                 // Create one top level title for this json
-                var subtitleElement = createTextElement("h1", "cheatBlock", data.Heading1);
+                var subtitleElement = createTextElement("div", "titleHeading cheatBlock", data.PageTitle);
                 newList.appendChild(subtitleElement);
                 
                 for (var content of data.Contents){

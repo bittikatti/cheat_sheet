@@ -1,10 +1,10 @@
 {
-    "Heading1" : "Poetry",
+    "PageTitle" : "Poetry",
     "Contents" :
     [
         {
             "Subtitle" : "Settings at first installation",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "When installing poetry on the machine for the first time, these commands are usually handy to set venv and project at the root of the local repository.",
             "Cheats" : [
                 {
@@ -21,7 +21,7 @@
         },
         {
             "Subtitle" : "Use other python version than the default global",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "The other python version needs to be already installed in the machine for this to work.",
             "Cheats" : [
                 {

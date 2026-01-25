@@ -1,10 +1,10 @@
 {
-    "Heading1" : "Javascript",
+    "PageTitle" : "Javascript",
     "Contents" :
     [
         {
             "Subtitle" : "Copy to clipboard",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "",
             "Cheats" : [
                 {
@@ -16,7 +16,7 @@
         },
         {
             "Subtitle" : "Import your javascript functions in a web app",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "To be able to export functions from other javascript files, the javascript needs to be imported as a module in the html file.",
             "Cheats" : [
                 {
@@ -49,7 +49,7 @@
         },
         {
             "Subtitle" : "WCAG 2.1 (Accessibility) compliancy",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "Some source material on how to implement things in web applications and complying an accessibility (WCAG 2.1) standard.",
             "Links": [
                 {
@@ -61,7 +61,7 @@
         },
         {
             "Subtitle" : "Short snippets to comply with WCAG 2.1",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "",
             "Cheats" : [
                 {

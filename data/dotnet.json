@@ -1,10 +1,10 @@
 {
-    "Heading1" : ".NET/C#",
+    "PageTitle" : ".NET/C#",
     "Contents" :
     [
         {
             "Subtitle" : "Create project",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "More: https://www.geeksforgeeks.org/c-sharp-hello-world/",
             "Cheats" : [
                 {

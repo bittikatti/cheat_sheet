@@ -1,10 +1,10 @@
 {
-    "Heading1" : "Pytest & Conftest",
+    "PageTitle" : "Pytest & Conftest",
     "Contents" :
     [
         {
             "Subtitle" : "Start pytest",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "",
             "Cheats" : [
                 {
@@ -16,7 +16,7 @@
         },
         {
             "Subtitle" : "Pytest",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "",
             "Cheats" : [
                 {
@@ -28,7 +28,7 @@
         },
         {
             "Subtitle" : "Conftest fixtures",
-            "HeadingLevel" : 2,
+            "HeadingLevel" : 1,
             "Intro" : "To avoid rewriting e.g. initializing some things for each test case, these things can be turned into pytest fixtures.",
             "Cheats" : [
                 {

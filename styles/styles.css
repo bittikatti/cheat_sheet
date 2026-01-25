@@ -30,7 +30,7 @@ a:active, a:hover{
 
 h1, h2, h3,
 h4, h5, h6,
-.customHeading {
+.customHeading, .titleHeading {
     color:rgb(126, 198, 153);
     line-height: 1em;
     margin: 0;
@@ -97,5 +97,13 @@ pre[class*="language-"] {
     font-size: 3em;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    font-weight: bold;
+}
+
+.titleHeading {
+    display: block;
+    font-size: 2.5em;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     font-weight: bold;
 }
