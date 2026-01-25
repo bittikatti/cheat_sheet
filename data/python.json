@@ -56,7 +56,7 @@
             "Cheats" : [
                 {
                     "Explanation" : "",
-                    "Cheat" : "# XPATH with text value\nWebDriverWait(driver, 30).until(\n    EC.visibility_of_element_located((By.XPATH, \"//a[text()='Git']\"))",
+                    "Cheat" : "# XPATH with text value\nWebDriverWait(driver, 30).until(\n    EC.visibility_of_element_located((By.XPATH, \"//a[text()='Git']\"))\n)",
                     "Class" : "language-python"
                 }
             ]
