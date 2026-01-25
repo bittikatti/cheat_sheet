@@ -52,11 +52,11 @@
         },
         {
             "Subtitle" : "Wait for text of element to be certain thing",
-            "Intro" : "",
+            "Intro" : "Even though a web element is found",
             "Cheats" : [
                 {
                     "Explanation" : "",
-                    "Cheat" : "",
+                    "Cheat" : "# Wait that link contains \"Git\":\ngit_text_in_element = WebDriverWait(driver, 30).until(\n    EC.text_to_be_present_in_element((By.XPATH, \"//a\"), \"Git\")\n)",
                     "Class" : "language-python"
                 }
             ]
