@@ -83,6 +83,18 @@
                     "Class" : "language-python"
                 }
             ]
+        },
+        {
+            "Subtitle" : "Javascript click",
+            "HeadingLevel" : 2,
+            "Intro" : "",
+            "Cheats" : [
+                {
+                    "Explanation" : "Javascript click does not raise an exception if the click fails (see demonstration below). EC.element_to_be_clickable combined with javascript click improves error handling.",
+                    "Cheat" : "# Head is not clickable, but try to click anyway with javascript click\nhead = driver.find_element(By.XPATH, \"//head\")\ndriver.execute_script(\"arguments[0].click();\", head)\n\n# This however will raise an ElementNotInteractableException\nhead.click()",
+                    "Class" : "language-python"
+                }
+            ]
         }
     ]
 }
