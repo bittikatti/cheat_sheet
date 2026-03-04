@@ -33,6 +33,12 @@ a {
     justify-content: space-between;
 }
 
+.cheatExplanationBlock{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 img{
     width: 100%;
 }
