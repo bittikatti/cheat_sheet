@@ -3,7 +3,7 @@
     "Contents" :
     [
         {
-            "Subtitle" : "Host locally",
+            "Subtitle" : "Host locally without package.json or build tool",
             "HeadingLevel" : 1,
             "Intro" : "Javascript 'fetch()' cannot access local files due to security settings. To see how code works while developing, it is possible to host locally.",
             "Cheats" : [
@@ -26,6 +26,53 @@
                     "Explanation" : "Close by Ctrl+C. To properly remove all before next host session, you need to remove cached images and files as well as hosted app data.",
                     "Cheat" : "",
                     "Class" : ""
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Vite",
+            "HeadingLevel" : 1,
+            "Intro" : "<a href='https://vite.dev/' alt='https://vite.dev/'>Vite</a> is a build tool for node.js web apps. Instead of raw dogging all local hosting during development and creating initial files from scratch, vite is one option to skip some of that manual and repetitive work.",
+            "Cheats" : [
+                {
+                    "Explanation" : "See a <a href='https://www.w3schools.com/react/react_getstarted.asp' alt='https://www.w3schools.com/react/react_getstarted.asp'>tutorial</a> to step by step create a react project.\nTo init project creation with vite:",
+                    "Cheat" : "npm create vite@latest my-react-app -- --template react",
+                    "Class" : "command-line language-git"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Overall node.js development workflow",
+            "HeadingLevel" : 1,
+            "Intro" : "Regardless of the build tool, the commands in development workflow with all node.js applications is pretty much the same. The varying build tools usually create the package.json. Some create test configurations for unit tests.",
+            "Cheats" : []
+        },
+        {
+            "Subtitle" : "Install dependencies",
+            "HeadingLevel" : 2,
+            "Intro" : "Install from package.json",
+            "Cheats" : [
+                {
+                    "Explanation" : "",
+                    "Cheat" : "npm install",
+                    "Class" : "command-line language-git"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Commands during development",
+            "HeadingLevel" : 2,
+            "Intro" : "Regardless of the build tool, the commands in development workflow with all node.js applications is pretty much the same. The varying build tools usually create the package.json. Some create test configurations for unit tests.",
+            "Cheats" : [
+                {
+                    "Explanation" : "Host locally. This command runs whatever is specified as the development start up script in the project's package.json 'script': {'dev':'vite/wrangler dev'}.",
+                    "Cheat" : "npm run dev",
+                    "Class" : "command-line language-git"
+                },
+                {
+                    "Explanation" : "Run unit tests if there are any. This command runs whatever is specified as the test script in the project's package.json 'script': {'test':'vitest'}.\n",
+                    "Cheat" : "npm test",
+                    "Class" : "command-line language-git"
                 }
             ]
         }
