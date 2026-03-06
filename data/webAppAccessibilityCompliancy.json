@@ -11,6 +11,11 @@
                     "Explanation" : "How to implement dynamically updating html regions",
                     "Link": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions",
                     "Alt": "How to implement dynamically updating html regions"
+                },
+                {
+                    "Explanation" : "Background and text color contrast checker",
+                    "Link": "https://webaim.org/resources/contrastchecker/",
+                    "Alt": "Link to a background and text color contrast checker"
                 }
             ]
         },
