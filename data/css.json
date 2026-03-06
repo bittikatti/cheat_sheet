@@ -25,6 +25,12 @@
                     "Class" : "language-css"
                 }
             ]
+        },
+        {
+            "Subtitle" : "Position",
+            "HeadingLevel" : 1,
+            "Intro" : "The concept of position is explained with visuals <a href='https://www.robcallaghan.co.uk/blog/understanding-the-css-position-property-with-examples/'>here by Rob Callaghan in his blog</a>.",
+            "Cheats" : []
         }
     ]
 }
