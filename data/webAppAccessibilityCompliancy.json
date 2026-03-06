@@ -30,6 +30,11 @@
                     "Class" : "language-html"
                 },
                 {
+                    "Explanation" : "Use button instead of div for buttons as they are already keyboard accessible.\nIf the default css of button bothers, remove it using the following snippet as pointed out by <a href='https://medium.com/@alexdev82/why-are-developers-still-using-div-for-buttons-in-2026-2eb81e93e1a9'>Alexander Burgos in this article</a> though also for accessibility reasons buttons cannot be left transparent.",
+                    "Cheat" : "button {\n\tall: unset;\n\tcursor: pointer;\n}",
+                    "Class" : "language-css"
+                },
+                {
                     "Explanation" : "Escape input field on Enter keypress.",
                     "Cheat" : "function createInputField(){\n\tconst inputElement = document.createElement('input');\n\n\t// Accessibility requirement: Must be able to exit with enter or return key.\n\tinputElement.addEventListener( 'keypress', function(event) {\n\t\tif ( event.key === 'Enter' ) {\n\t\t\tinputElement.blur(); // Cursor is freed from the field\n\t\t}\n\t});\n\n\tinputElement.addEventListener('change', function (evt) {\n\t\t// What ever your app is supposed to do when input field value changes\n\t});\n}",
                     "Class" : "language-javascript"
