@@ -31,7 +31,7 @@
                 },
                 {
                     "Explanation" : "Use button instead of div for buttons as they are already keyboard accessible.\nIf the default css of button bothers, remove it using the following snippet as pointed out by <a href='https://medium.com/@alexdev82/why-are-developers-still-using-div-for-buttons-in-2026-2eb81e93e1a9'>Alexander Burgos in this article</a> though also for accessibility reasons buttons cannot be left transparent.",
-                    "Cheat" : "button {\n\tall: unset;\n\tcursor: pointer;\n}",
+                    "Cheat" : "button {\n\tall: unset;\n\tcursor: default;\n}",
                     "Class" : "language-css"
                 },
                 {
