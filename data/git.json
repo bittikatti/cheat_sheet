@@ -39,38 +39,71 @@
         {
             "Subtitle" : "'Undo' bad commits",
             "HeadingLevel" : 1,
-            "Intro" : "Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit.",
+            "Intro" : "Recourse depend on whether the commit was pushed or not and if it was merge commit or regular commit."
+        },
+        {
+            "Subtitle" : "Regular commits",
+            "HeadingLevel" : 2,
+            "Intro" : ""
+        },
+        {
+            "Subtitle" : "Unpushed commits",
+            "HeadingLevel" : 3,
+            "Intro" : "Undo the latest commit with 'reset'",
             "Cheats" : [
                 {
-                    "Explanation" : "Unpushed regular commit, but keep changes",
+                    "Explanation" : "Keep changes",
                     "Cheat" : "git reset --soft HEAD~1",
                     "Class" : "command-line language-git"
                 },
                 {
-                    "Explanation" : "(Avoid using this) Unpushed regular commit. Trash the changes.",
+                    "Explanation" : "Trash the changes",
                     "Cheat" : "git reset --hard HEAD~1",
-                    "Class" : "command-line language-git"
-                },
-                {
-                    "Explanation" : "Pushed regular commit",
-                    "Cheat" : "git revert -- <insert commit id you want to flip>",
                     "Class" : "command-line language-git"
                 }
             ]
         },
         {
-            "Subtitle" : "Merge commit went sideways",
-            "HeadingLevel" : 1,
-            "Intro" : "This is most likely is going to take relatively long time to fix correctly. In case multiple people work simultaneously on the same project, you may need to notify someone (to later revert the reverted merge commit if necessary).",
+            "Subtitle" : "Pushed commits",
+            "HeadingLevel" : 3,
+            "Intro" : "Pushed commits should not be literally 'undone'. Even when <a href='https://bittikatti.github.io/cheat_sheet/cheatCodes.html?list=cleanGitHistory' alt='Link to page about cleaning git history'>cleaning secrets from history</a>.",
             "Cheats" : [
                 {
-                    "Explanation" : "Unpushed merge commit.\nGit reset might work, but it needs different flags. Revert is complicated, avoid that, if possible. Hopefully there is no or only few unpushed changes before the bad merge as it could just be easier to restore the state from the remote repository.",
-                    "Cheat" : "<Depends. Not sure.>",
-                    "Class" : "command-line language-git",
-                    "EnableCopy" : false
+                    "Explanation" : "Use revert to mark the commit as 'been-there-done-that-but-not-anymore'.",
+                    "Cheat" : "git revert -- <insert commit id you want to flip>",
+                    "Class" : "command-line language-git"
                 },
                 {
-                    "Explanation" : "Pushed merge commit.\nRevert is not ctrl+Z but instead it states that the changes in this commit are abandoned. In the case of a merge commit, revert states that all the commits from the source branch are abandoned. If the source branch containing the reverted commits is later merged back, the revert of merge needs to be reverted before the new merge. Otherwise the commits before the first merge remain abandoned.",
+                    "Explanation" : "If more than one commit (on same files) should be reverted, conflicts can be avoided by reverting in order of newest to oldest.\nA revert commit can also be reverted later, if the changes are later reapplied.",
+                    "Cheat" : "",
+                    "Class" : ""
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Merge commits",
+            "HeadingLevel" : 2,
+            "Intro" : "Merge commits are not regular commits. When a branch B is merged into a branch A, the commits from B will be introduced into history of A, along with a merge commit 'on top' of it all.\nTherefore it may take longer time to address bad merge commits. The solution also depends on whether the merge was pushed or not and if the changes included by the merge are in branches actively worked on."
+        },
+        {
+            "Subtitle" : "Unpushed merge",
+            "HeadingLevel" : 3,
+            "Intro" : "If the merge was not pushed and nothing (meaningful) was changed after the merge, most likely 'reset' works fine.",
+            "Cheats" : [
+                {
+                    "Explanation" : "",
+                    "Cheat" : "git reset --hard HEAD~1",
+                    "Class" : "command-line language-git"
+                }
+            ]
+        },
+        {
+            "Subtitle" : "Pushed merge",
+            "HeadingLevel" : 3,
+            "Intro" : "It gets complicated if the merge was pushed. Revert should be preferred for pushed changes, but 'revert' is not actually the same as 'undo' or ctrl+Z like stated earlier.",
+            "Cheats" : [
+                {
+                    "Explanation" : "In the case of a merge commit, 'revert' states that all the commits from the source branch are abandoned. Because merging also copies the commits from the other branch, reverting a merge marks those too as abandoned. So, if a branch containing commits from the branch B is later directly merged back to the branch A, those commits will remain abandoned. If this is not the purpose, the merge revert or the simultaneously revert commits should be (re-)reverted before a new merge.\nIn addition to complicating merges in the future, reverting a merge also requires bit more flags to state the commit to return to. Because with merge, you have two viable options: The latest commit of the branch A or the branch B before the merge.",
                     "Cheat" : "git revert -m 1/2 <insert commit you want to get to in the parent branch>",
                     "Class" : "command-line language-git"
                 }
